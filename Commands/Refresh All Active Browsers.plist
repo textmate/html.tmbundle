@@ -35,6 +35,9 @@ ps -xc|grep -sq Safari &amp;&amp; osascript -e 'tell app "Safari"' -e 'activate'
 
 # Check if Camino is running, if so refresh 
 ps -xc|grep -sq Camino &amp;&amp; osascript -e 'tell app "Camino"' -e 'activate' -e 'tell app "System Events" to keystroke "r" using {command down}' -e 'end tell'
+
+# Check if Chrome is running, if so refresh 
+ps -xc|grep -sq Chrome &amp;&amp; osascript -e 'tell app "Google Chrome"' -e 'activate' -e 'tell app "System Events" to keystroke "r" using {command down}' -e 'end tell'
 </string>
 	<key>input</key>
 	<string>none</string>

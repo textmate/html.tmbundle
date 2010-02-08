@@ -27,7 +27,7 @@ proclist = `ps -x -o command`
 active = []
 os = `defaults read /System/Library/CoreServices/SystemVersion ProductVersion`
 
-browsers = %w[ Safari OmniWeb Camino Shiira firefox-bin Xyle\ scope Opera Internet\ Explorer flock-bin iCab Sunrise seamonkey-bin navigator-bin ].join('|')
+browsers = %w[ Safari OmniWeb Camino Shiira firefox-bin Xyle\ scope Opera Internet\ Explorer flock-bin iCab Sunrise seamonkey-bin navigator-bin Google\ Chrome].join('|')
 
 # Build paths to each active browser
 #
