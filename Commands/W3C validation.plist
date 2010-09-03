@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
@@ -13,13 +13,14 @@ page.gsub!(/&lt;\?(php|=).*?\?&gt;|&lt;%.*?%&gt;/m, '')
 
 open('|curl -sF uploaded_file=@-\;type=text/html http://validator.w3.org/check', 'r+') do |io|
   io &lt;&lt; page; io.close_write
-  while line = io.gets
-    line.gsub!(/&lt;\/title&gt;/, '\&amp;&lt;base href="http://validator.w3.org/"&gt;')
-    line.gsub!(/Line (\d+),? Column (\d+)/i) do
-      "&lt;a href='txmt://open?line=#$1&amp;column=#{$2.to_i + 1}'&gt;#$&amp;&lt;/a&gt;"
-    end
-    puts line
+
+  result = io.read
+
+  result.gsub!(/&lt;\/title&gt;/, '\&amp;&lt;base href="http://validator.w3.org/"&gt;')
+  result.gsub!(/Line (\d+),?\s*Column (\d+)/mi) do
+    "&lt;a href=\"txmt://open?line=#$1&amp;amp;column=#{$2.to_i + 1}\"&gt;#$&amp;&lt;/a&gt;"
   end
+  puts result
 end
 </string>
 	<key>dontFollowNewOutput</key>
