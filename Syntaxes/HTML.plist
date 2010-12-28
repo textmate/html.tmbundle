@@ -25,6 +25,7 @@
 		|&lt;\?(?:php)?.*\b(if|for(each)?|while)\b.+:
 		|\{\{?(if|foreach|capture|literal|foreach|php|section|strip)
 		|\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/)))
+    |array\(\s*$
 		)</string>
 	<key>foldingStopMarker</key>
 	<string>(?x)
@@ -34,6 +35,7 @@
 		|&lt;\?(?:php)?.*\bend(if|for(each)?|while)\b
 		|\{\{?/(if|foreach|capture|literal|foreach|php|section|strip)
 		|^[^{]*\}
+    |^\s*\),
 		)</string>
 	<key>keyEquivalent</key>
 	<string>^~H</string>
