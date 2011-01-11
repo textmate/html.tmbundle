@@ -1,9 +1,11 @@
 
-This is a quick fork of the HTML bundle on that comes with Textmate, to allow php array structures to be folded, like other container objects, like javascript objects `{}`, or arrays in other languages `[]`.
+This is a quick fork of the HTML bundle on that comes with Textmate, to allow php array structures to be folded like other container objects in Textmate. 
+
+This brings PHP arrays inline with javascript object literals, or arrays in other languages.
 
 These are in the html bundle, because PHP syntax is actually evaluated in this bundle, when dealing with files that use both kinds of markup
 
-### How to install
+### How to install
 
 First of all jump to your Bundles directory:
 
@@ -15,6 +17,6 @@ Then remove the existing bundle
 
 Then clone this one in:
 
-        git clone https://chris-d-adams@github.com/chris-d-adams/html.tmbundle.git HTML.tmbundle
+        git clone git://github.com/chris-d-adams/html.tmbundle.git HTML.tmbundle
         
         
