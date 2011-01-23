@@ -6,7 +6,7 @@
 	<string>#!/usr/bin/env ruby -wKU
 require "#{ENV['TM_SUPPORT_PATH']}/lib/escape"
 require "shellwords"
-require "CGI"
+require "cgi"
 
 def tag_for_file(file, tab_stop = 0)
     file_path = File.expand_path file
