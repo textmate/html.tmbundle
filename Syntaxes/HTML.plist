@@ -37,6 +37,29 @@
 		|^[^{]*\}
 		|^\s*\)[,;]
 		)</string>
+	<key>injections</key>
+	<dict>
+		<key>source</key>
+		<dict>
+			<key>comment</key>
+			<string>Match Empty Brace Pairs in Embedded Source</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>meta.scope.between-brace-pair.html</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\{(\})</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>keyEquivalent</key>
 	<string>^~H</string>
 	<key>name</key>
