@@ -19,7 +19,7 @@
 	<string>&lt;!DOCTYPE|&lt;(?i:html)|&lt;\?(?i:php)</string>
 	<key>foldingStartMarker</key>
 	<string>(?x)
-		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl)\b.*?&gt;
+		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|section|article|aside|header|footer|nav|menu|select|fieldset|style|script|ul|ol|li|form|dl)\b.*?&gt;
 		|&lt;!--(?!.*--\s*&gt;)
 		|^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
 		|&lt;\?(?:php)?.*\b(if|for(each)?|while)\b.+:
@@ -29,7 +29,7 @@
 		)</string>
 	<key>foldingStopMarker</key>
 	<string>(?x)
-		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl)&gt;
+		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|section|article|aside|header|footer|nav|menu|select|fieldset|style|script|ul|ol|li|form|dl)&gt;
 		|^(?!.*?&lt;!--).*?--\s*&gt;
 		|^&lt;!--\ end\ tminclude\ --&gt;$
 		|&lt;\?(?:php)?.*\bend(if|for(each)?|while)\b
@@ -405,7 +405,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(&lt;/?)((?i:address|blockquote|dd|div|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|menu|pre)\b)</string>
+			<string>(&lt;/?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\b)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
