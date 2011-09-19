@@ -300,6 +300,7 @@ module TextMate
           if doc.match(/#(tm|bb)include/)
             if not doc.match(/#dont_update#/)
               ENV['TM_FILEPATH'] = file
+              ENV['TM_DIRECTORY'] = File.dirname(file)
               reset
               newdoc = doc.dup
               process_persistent_includes_for_string(newdoc)
