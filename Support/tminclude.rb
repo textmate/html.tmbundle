@@ -9,17 +9,30 @@ module TextMate
   class Includes
     include Singleton
 
+    def initialize
+      @time = Time.now
+    end
+
     protected
 
     def reset
       @argument_regexp = Regexp.new(/\s*#([^#]+?)#\s*=\s*(?:(["'])([^\2]*?)\2|(\S+))\s*/m).freeze
       @depth = 1
-      @global_vars = {}
-      @time = Time.now
       @ctime = nil
       @mtime = nil
 
       init_comment_delimiters()
+      init_global_vars()
+    end
+
+    def init_comment_delimiters
+      if ENV['TM_COMMENT_START']
+        @escape_open = (ENV['TM_COMMENT_START'].dup.strip).freeze
+        @escape_close = (ENV['TM_COMMENT_END'] ? ENV['TM_COMMENT_END'].dup.strip : '').freeze
+      else
+        @escape_open = '<!--'.freeze
+        @escape_close = '-->'.freeze
+      end
 
       # non-capturing for .gsub
       # <!-- #tminclude "/path/to/file" -->
@@ -36,18 +49,6 @@ module TextMate
         # version that captures for .scan
         @tminclude_regexp_detail = %r{(#{escaped_open} *#(?:tm|bb)include +['"]([^'"]+)['"](?: +([^\n]*?))?)(\n.*?)(#{escaped_open} +end (?:tm|bb)include *(?:\n|$))}im
       end
-
-      init_global_vars()
-    end
-
-    def init_comment_delimiters
-      if ENV['TM_COMMENT_START']
-        @escape_open = (ENV['TM_COMMENT_START'].dup.strip).freeze
-        @escape_close = (ENV['TM_COMMENT_END'] ? ENV['TM_COMMENT_END'].dup.strip : '').freeze
-      else
-        @escape_open = '<!--'.freeze
-        @escape_close = '-->'.freeze
-      end
     end
 
     def init_global_vars
@@ -61,7 +62,6 @@ module TextMate
       # Here are some of BBEdit's global variables. We may choose
       # to cherry pick these for support...
       @global_vars['dont_update'] = ''
-      @global_vars['localpath'] = ENV['TM_FILEPATH']
       @global_vars['shortusername'] = ENV['USER']
       # lazily invoke this one, since it has cost associated with it...
       @global_vars['username'] = method("var_username")
@@ -77,26 +77,7 @@ module TextMate
       @global_vars['yearnum'] = @time.year
       @global_vars['generator'] = "TextMate"
 
-      if filename = ENV['TM_FILENAME']
-        @global_vars['filename'] = filename
-        @global_vars['basename'] = filename.sub(/\.\w+$/, '')
-        if filename =~ /(\.\w+$)/
-          @global_vars['file_extension'] = $1
-        else
-          @global_vars['file_extension'] = ''
-        end
-
-        if ctime = File.ctime(ENV['TM_FILEPATH'])
-          @ctime = ctime
-          @global_vars['creationdate'] = method('var_creationdate')
-          @global_vars['creationtime'] = method('var_creationtime')
-        end
-        if mtime = File.mtime(ENV['TM_FILEPATH'])
-          @mtime = mtime
-          @global_vars['modifieddate'] = method('var_modifieddate')
-          @global_vars['modifiedtime'] = method('var_modifiedtime')
-        end
-      end
+      init_file_vars(ENV['TM_FILEPATH'])
 
       if ENV['TM_PROJECT_FILEPATH']
         dir = ENV['TM_PROJECT_FILEPATH'].dup
@@ -120,9 +101,28 @@ module TextMate
       # Local Preview URL
 
       # Unsupported...
-      # base, base_url, bodytext, charset, dirpath, doctitle, language,
+      # base, base_url, charset, dirpath, doctitle, language,
       # link, machine, meta, path, prefix, real_url, root,
       # rootpath, server, title
+    end
+
+    def init_file_vars(file)
+      @global_vars['localpath'] = file
+      basename = File.basename(file)
+      @global_vars['filename'] = basename
+      @global_vars['basename'] = basename.sub(/\.\w+$/, '')
+      @global_vars['file_extension'] = File.extname(file)
+
+      if ctime = File.ctime(file)
+        @ctime = ctime
+        @global_vars['creationdate'] = method('var_creationdate')
+        @global_vars['creationtime'] = method('var_creationtime')
+      end
+      if mtime = File.mtime(file)
+        @mtime = mtime
+        @global_vars['modifieddate'] = method('var_modifieddate')
+        @global_vars['modifiedtime'] = method('var_modifiedtime')
+      end
     end
 
     def parse_arguments(arg_str, vars)
@@ -180,21 +180,19 @@ module TextMate
       # File resolution; expand ~/... paths;
       # look for relative files, relative to current file, current project, replace variables
       file = replace_variables(file, local_vars)
-      file = File.expand_path(file)
-      if File.exist?(filepath = file)
+      file_dir = File.dirname(ENV['TM_FILEPATH'])
+      if File.exist?(filepath = File.expand_path(file))
       elsif file.match(/^\//) # non-relative path...
-        print "Could not open file: #{file}"
-        exit 206
-      elsif File.exist?(filepath = "#{ENV['TM_FILEPATH']}/#{file}")
-      elsif File.exist?(filepath = "#{ENV['TM_PROJECT_DIRECTORY']}/#{file}")
+        raise Exception, "Could not find file: #{file}"
+      elsif File.exist?(filepath = "#{file_dir}/#{file}")
       else
-        print "Could not open file: #{file}"
-        exit 206
+        raise Exception, "Could not find file: #{file}"
       end
 
+      file = filepath
+
       if @doc_stack.has_key?(file)
-        print "Error: recursive include for #{file}"
-        exit 206
+        raise Exception, "Error: recursive include for #{file}"
       end
 
       @doc_stack[file] = true
@@ -269,19 +267,9 @@ module TextMate
       replace_variables(doc, vars)
     end
 
-    public
-
-    def process_persistent_includes
-      #initialize
-      reset
-
+    def process_persistent_includes_for_string(doc)
       vars = {}
-      doc = STDIN.readlines.join
-      if doc =~ /\#dont_update\#/
-        print "This document cannot be updated because it is protected."
-        exit 206
-      end
-      doc = process_document(doc, vars)
+      process_document(doc, vars)
 
       # lastly, process '#docsize#'
       # TBD: support for reporting document size in kb, mb, etc.
@@ -298,6 +286,65 @@ module TextMate
           newlen = baselen + (newlen.to_s.length * matches.length)
         end
         doc.gsub!(/#docsize#/i, newlen.to_s)
+      end
+    end
+
+    public
+
+    def process_persistent_includes_for_project
+      require "#{ENV['TM_SUPPORT_PATH']}/lib/textmate.rb"
+      count = 0
+      begin
+        TextMate.each_text_file do | file |
+          doc = IO.readlines(file).join
+          if doc.match(/#(tm|bb)include/)
+            if not doc.match(/#dont_update#/)
+              ENV['TM_FILEPATH'] = file
+              ENV['TM_DIRECTORY'] = File.dirname(file)
+              reset
+              newdoc = doc.dup
+              process_persistent_includes_for_string(newdoc)
+              if newdoc != doc
+                if File.writable?(file)
+                  f = File.new(file, "w")
+                  f.write(newdoc)
+                  f.close
+                  count += 1
+                end
+              end
+            end
+          end
+        end
+      rescue Exception => e
+        print e
+        exit 206
+      end
+      if count == 1
+        print "1 file updated"
+        TextMate.rescan_project
+      elsif count > 1
+        print "#{count} files updated"
+        TextMate.rescan_project
+      else
+        print "No files needed an update"
+      end
+      exit 206
+    end
+
+    def process_persistent_includes
+      #initialize
+      reset
+
+      doc = STDIN.readlines.join
+      if doc =~ /\#dont_update\#/
+        print "This document cannot be updated because it is protected."
+        exit 206
+      end
+      begin
+        process_persistent_includes_for_string(doc)
+      rescue Exception => e
+        print e
+        exit 206
       end
       print doc
     end
