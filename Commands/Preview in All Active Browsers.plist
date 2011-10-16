@@ -27,7 +27,7 @@ proclist = `ps -x -o command`
 active = []
 os = `defaults read /System/Library/CoreServices/SystemVersion ProductVersion`
 
-browsers = %w[ Safari OmniWeb Camino Shiira firefox-bin Xyle\ scope Opera Internet\ Explorer flock-bin iCab Sunrise seamonkey-bin navigator-bin Google\ Chrome].join('|')
+browsers = %w[ Safari OmniWeb Camino Shiira firefox(-bin)? Xyle\ scope Opera Internet\ Explorer flock-bin iCab Sunrise seamonkey-bin navigator-bin Google\ Chrome].join('|')
 
 # Build paths to each active browser
 #
@@ -45,7 +45,7 @@ end
 
 # TODO: Change when Leopard Only
 # On Leopard use the -g option to open in background.
-if os =~ /^10\.(5|6)/
+if os =~ /^10\.(5|6|7)/
   active.each {|p| `open -g -a #{e_sh(p)} #{e_sh(url)}` }
 else
   active.each {|p| `open -a #{e_sh(p)} #{e_sh(url)}` }
