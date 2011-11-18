@@ -8,12 +8,9 @@
 		<string>htm</string>
 		<string>shtml</string>
 		<string>xhtml</string>
-		<string>phtml</string>
-		<string>php</string>
 		<string>inc</string>
 		<string>tmpl</string>
 		<string>tpl</string>
-		<string>ctp</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>&lt;!DOCTYPE|&lt;(?i:html)|&lt;\?(?i:php)</string>
@@ -39,23 +36,17 @@
 		)</string>
 	<key>injections</key>
 	<dict>
-		<key>source</key>
+		<key>text.html.basic</key>
 		<dict>
 			<key>comment</key>
-			<string>Match Empty Brace Pairs in Embedded Source</string>
+			<string>Match this via injection so it doesnt match in other grammars.</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>meta.scope.between-brace-pair.html</string>
-						</dict>
-					</dict>
 					<key>match</key>
-					<string>\{(\})</string>
+					<string>&lt;</string>
+					<key>name</key>
+					<string>invalid.illegal.bad-angle-bracket.html</string>
 				</dict>
 			</array>
 		</dict>
@@ -388,10 +379,6 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#php</string>
-						</dict>
-						<dict>
-							<key>include</key>
 							<string>source.js</string>
 						</dict>
 					</array>
@@ -544,12 +531,6 @@
 			<key>name</key>
 			<string>invalid.illegal.incomplete.html</string>
 		</dict>
-		<dict>
-			<key>match</key>
-			<string>&lt;</string>
-			<key>name</key>
-			<string>invalid.illegal.bad-angle-bracket.html</string>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -560,10 +541,6 @@
 				<dict>
 					<key>include</key>
 					<string>#ruby</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#php</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -603,20 +580,6 @@
 					<string>&amp;</string>
 					<key>name</key>
 					<string>invalid.illegal.bad-ampersand.html</string>
-				</dict>
-			</array>
-		</dict>
-		<key>php</key>
-		<dict>
-			<key>begin</key>
-			<string>(?=(^\s*)?&lt;\?)</string>
-			<key>end</key>
-			<string>(?!(^\s*)?&lt;\?)</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>source.php</string>
 				</dict>
 			</array>
 		</dict>
