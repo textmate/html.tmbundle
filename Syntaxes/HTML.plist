@@ -540,10 +540,6 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#ruby</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#smarty</string>
 				</dict>
 				<dict>
@@ -596,102 +592,6 @@
 				<dict>
 					<key>include</key>
 					<string>source.python</string>
-				</dict>
-			</array>
-		</dict>
-		<key>ruby</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>&lt;%+#</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.erb</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>%&gt;</string>
-					<key>name</key>
-					<string>comment.block.erb</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>&lt;%+(?!&gt;)=?</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.section.embedded.ruby</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>-?%&gt;</string>
-					<key>name</key>
-					<string>source.ruby.embedded.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.comment.ruby</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(#).*?(?=-?%&gt;)</string>
-							<key>name</key>
-							<string>comment.line.number-sign.ruby</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>source.ruby</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>&lt;\?r(?!&gt;)=?</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.section.embedded.ruby.nitro</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>-?\?&gt;</string>
-					<key>name</key>
-					<string>source.ruby.nitro.embedded.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.comment.ruby.nitro</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(#).*?(?=-?\?&gt;)</string>
-							<key>name</key>
-							<string>comment.line.number-sign.ruby.nitro</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>source.ruby</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>
