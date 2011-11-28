@@ -16,7 +16,7 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>foldingStartMarker</key>
 	<string>(?x)
-		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|section|article|aside|header|footer|nav|menu|select|fieldset|style|script|ul|ol|li|form|dl)\b.*?&gt;
+		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|section|article|header|footer|nav|aside)\b.*?&gt;
 		|&lt;!--(?!.*--\s*&gt;)
 		|^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
 		|&lt;\?(?:php)?.*\b(if|for(each)?|while)\b.+:
@@ -26,7 +26,7 @@
 		)</string>
 	<key>foldingStopMarker</key>
 	<string>(?x)
-		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|section|article|aside|header|footer|nav|menu|select|fieldset|style|script|ul|ol|li|form|dl)&gt;
+		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|section|article|header|footer|nav|aside)&gt;
 		|^(?!.*?&lt;!--).*?--\s*&gt;
 		|^&lt;!--\ end\ tminclude\ --&gt;$
 		|&lt;\?(?:php)?.*\bend(if|for(each)?|while)\b
@@ -712,7 +712,7 @@
 		<key>tag-generic-attribute</key>
 		<dict>
 			<key>match</key>
-			<string>\b([a-zA-Z\-:]+)</string>
+			<string>(?&lt;=[^=])\b([a-zA-Z0-9:-]+)</string>
 			<key>name</key>
 			<string>entity.other.attribute-name.html</string>
 		</dict>
@@ -839,7 +839,18 @@
 					<key>include</key>
 					<string>#embedded-code</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#unquoted-attribute</string>
+				</dict>
 			</array>
+		</dict>
+		<key>unquoted-attribute</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;==)(?:[^\s&lt;&gt;/'"]|/(?!&gt;))+</string>
+			<key>name</key>
+			<string>string.unquoted.html</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
