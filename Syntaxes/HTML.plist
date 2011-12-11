@@ -14,26 +14,6 @@
 	</array>
 	<key>firstLineMatch</key>
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
-	<key>foldingStartMarker</key>
-	<string>(?x)
-		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|section|article|header|footer|nav|aside)\b.*?&gt;
-		|&lt;!--(?!.*--\s*&gt;)
-		|^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
-		|&lt;\?(?:php)?.*\b(if|for(each)?|while)\b.+:
-		|\{\{?(if|foreach|capture|literal|foreach|php|section|strip)
-		|\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/)))
-		|array\s?\(\s*$
-		)</string>
-	<key>foldingStopMarker</key>
-	<string>(?x)
-		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|section|article|header|footer|nav|aside)&gt;
-		|^(?!.*?&lt;!--).*?--\s*&gt;
-		|^&lt;!--\ end\ tminclude\ --&gt;$
-		|&lt;\?(?:php)?.*\bend(if|for(each)?|while)\b
-		|\{\{?/(if|foreach|capture|literal|foreach|php|section|strip)
-		|^[^{]*\}
-		|^\s*\)[,;]
-		)</string>
 	<key>injections</key>
 	<dict>
 		<key>text.html.basic</key>
