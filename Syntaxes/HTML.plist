@@ -16,7 +16,7 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>injections</key>
 	<dict>
-		<key>text.html.basic</key>
+		<key>text.html.basic - comment.block</key>
 		<dict>
 			<key>comment</key>
 			<string>Match this via injection so it doesnt match in other grammars.</string>
