@@ -5,7 +5,10 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>###	Refresh All Active Browsers - OmniWeb, Safari, Firefox &amp; IE
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+###	Refresh All Active Browsers - OmniWeb, Safari, Firefox &amp; IE
 ### v1.0. 2005-03-29
 ###
 
@@ -38,18 +41,27 @@ ps -xc|grep -sq Camino &amp;&amp; osascript -e 'tell app "Camino"' -e 'activate'
 
 # Check if Chrome is running, if so refresh 
 ps -xc|grep -sq Chrome &amp;&amp; osascript -e 'tell app "Google Chrome"' -e 'activate' -e 'tell app "System Events" to keystroke "r" using {command down}' -e 'end tell'
-</string>
+
+true</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
 	<string>Refresh Running Browser(s)</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
 	<key>scope</key>
 	<string>text.html, source.css</string>
 	<key>uuid</key>
 	<string>B8651C6E-A05E-11D9-86AC-000D93C8BE28</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
