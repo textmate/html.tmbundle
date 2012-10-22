@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>Body</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html - meta.tag</string>
 	<key>tabTrigger</key>
 	<string>body</string>
 	<key>uuid</key>
