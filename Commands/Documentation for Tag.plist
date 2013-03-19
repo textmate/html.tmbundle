@@ -106,6 +106,8 @@ $tags = {
   "VAR"        =&gt; "../struct/text.html#edef-VAR"
 }
 
+require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes.rb"
+
 def request_tag_name (default_tag = "body")
   res, tag = %x{ "$TM_SUPPORT_PATH/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog" \
     inputbox --float --title 'Documentation for Tag' \
@@ -115,7 +117,7 @@ def request_tag_name (default_tag = "body")
   }.split("\n")
   case res.to_i
     when 1 then $tags[tag.to_s.upcase] || "elements.html"
-    when 2 then abort "&lt;script&gt;window.close()&lt;/script&gt;"
+    when 2 then TextMate.exit_discard
     when 3 then "elements.html"
   end
 end
