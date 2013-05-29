@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;blockquote${1: cite="${2:http://macromates.com/}"}&gt;
+	${3:&lt;p&gt;${0:$TM_SELECTED_TEXT}&lt;/p&gt;}
+&lt;/blockquote&gt;</string>
+	<key>name</key>
+	<string>Blockquote</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>blockquote</string>
+	<key>uuid</key>
+	<string>DF4D4206-7F2E-4007-B35B-719464FAD659</string>
+</dict>
+</plist>

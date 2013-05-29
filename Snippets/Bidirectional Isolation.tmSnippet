@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;bdi&gt;${0:$TM_SELECTED_TEXT}&lt;/bdi&gt;</string>
+	<key>name</key>
+	<string>Bidirectional Isolation</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>bdi</string>
+	<key>uuid</key>
+	<string>22DFF170-D7C3-4AF5-9ABC-06D07C5E7510</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;ins${1: datetime="${2:`date +"%Y-%m-%dT%T%z" | sed 's/00/:00/'`}"}&gt;${0:$TM_SELECTED_TEXT}&lt;/ins&gt;</string>
+	<key>name</key>
+	<string>Inserted Text</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>ins</string>
+	<key>uuid</key>
+	<string>33B77154-2CF1-4740-AC13-7333E7245B9C</string>
+</dict>
+</plist>
