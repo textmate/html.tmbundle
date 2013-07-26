@@ -15,6 +15,8 @@ File.read("#{ENV['TM_BUNDLE_SUPPORT']}/entities.txt").scan(/^(\d+)\t(.+)$/) do |
   entities &lt;&lt; { 'display' =&gt; "#{value} (#{char})", 'char' =&gt; char, 'entity' =&gt; value }
 end
 
+entities.sort! { |lhs, rhs| lhs['display'].downcase &lt;=&gt; rhs['display'].downcase }
+
 plist = { 'entities' =&gt; entities, 'insertAsEntity' =&gt; true }.to_plist
 open('|"$DIALOG" -cm "Insert Entity"', 'w+') do |io|
   io &lt;&lt; plist; io.close_write
