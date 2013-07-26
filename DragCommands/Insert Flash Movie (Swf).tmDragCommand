@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/ruby
+	<string>#!/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/ruby
 
 require "zlib"
 
@@ -59,17 +59,22 @@ class Swf
     
     @width = (xmax - xmin) / 20
     @height = (ymax - ymin) / 20
+    @bgcolor = "${30:#FFFFFF}"
     
     @buffer.slice!(0..3)
     
     @bits = ""
     
-    while(true)
-      tag = getNextTag()
-      if(tag[:id] == 9)
-        @bgcolor = sprintf("#%02X%02X%02X", tag[:data][0], tag[:data][1], tag[:data][2])
-        break
+    begin
+      while(true)
+        tag = getNextTag()
+        if(tag[:id] == 9)
+          @bgcolor = sprintf("#%02X%02X%02X", tag[:data][0], tag[:data][1], tag[:data][2])
+          break
+        end
       end
+    rescue Exception =&gt; e
+      STDERR &lt;&lt; e &lt;&lt; "\n"
     end
     
   end
