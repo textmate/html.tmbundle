@@ -42,7 +42,7 @@
 		</array>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
-		&lt;(?!\?|area|base|br|col|frame|hr|html|img|input|link|meta|param|[^&gt;]*/&gt;)
+		&lt;(?!\?|(?:area|base|br|col|frame|hr|html|img|input|link|meta|param)\b|[^&gt;]*/&gt;)
 		  ([A-Za-z0-9]+)(?=\s|&gt;)\b[^&gt;]*&gt;(?!.*&lt;/\1&gt;)
 		|&lt;!--(?!.*--&gt;)
 		|&lt;\?php.+?\b(if|else(?:if)?|for(?:each)?|while)\b.*:(?!.*end\1)
