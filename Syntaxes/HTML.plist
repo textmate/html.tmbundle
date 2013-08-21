@@ -16,10 +16,10 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>injections</key>
 	<dict>
-		<key>text.html.basic - comment.block</key>
+		<key>R:text.html - comment.block</key>
 		<dict>
 			<key>comment</key>
-			<string>Match this via injection so it doesnt match in other grammars.</string>
+			<string>Use R: to ensure this matches after any other injections.</string>
 			<key>patterns</key>
 			<array>
 				<dict>
