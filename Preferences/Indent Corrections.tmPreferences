@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Indent Corrections</string>
+	<key>scope</key>
+	<string>text.html.basic</string>
+	<key>settings</key>
+	<dict>
+		<key>disableIndentCorrections</key>
+		<string>emptyLines</string>
+	</dict>
+	<key>uuid</key>
+	<string>4120EC74-470E-4D23-9D21-08FC21ED0C0E</string>
+</dict>
+</plist>
