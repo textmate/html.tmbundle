@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>Heading</string>
 	<key>scope</key>
-	<string>text.html - meta.tag, text.html meta.tag &amp; R:punctuation.definition.tag.html</string>
+	<string>text.html - B:meta.tag</string>
 	<key>tabTrigger</key>
 	<string>h1</string>
 	<key>uuid</key>
