@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Indent Corrections</string>
 	<key>scope</key>
-	<string>text.html.basic</string>
+	<string>text.html</string>
 	<key>settings</key>
 	<dict>
 		<key>disableIndentCorrections</key>
