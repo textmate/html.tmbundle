@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;script type="text/javascript" charset="utf-8"&gt;
+	<string>&lt;script type="text/javascript"&gt;
 	$0
 &lt;/script&gt;</string>
 	<key>name</key>
