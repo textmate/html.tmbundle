@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;div${1: id="${2:name}"}&gt;
+	<string>&lt;div${1: id="${2:name}"}${3: class="${4:class}"}&gt;
 	${0:$TM_SELECTED_TEXT}
 &lt;/div&gt;</string>
 	<key>name</key>
