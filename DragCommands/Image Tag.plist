@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>command</key>
-	<string>#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby  -wKU
+	<string>#!/usr/bin/env ruby18  -wKU
 require "#{ENV['TM_SUPPORT_PATH']}/lib/escape"
 require "shellwords"
 require "cgi"

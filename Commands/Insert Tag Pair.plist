@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby  -wKU
+	<string>#!/usr/bin/env ruby18  -wKU
 #
 # This script will expand the current word into: &lt;word&gt;&lt;/word&gt;
 # It will recognize HTML 4.0 tags that need no close tag.
