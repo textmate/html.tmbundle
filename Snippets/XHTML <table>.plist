@@ -4,8 +4,14 @@
 <dict>
 	<key>content</key>
 	<string>&lt;table border="${1:0}"${2: cellspacing="${3:5}" cellpadding="${4:5}"}&gt;
-	&lt;tr&gt;&lt;th&gt;${5:Header}&lt;/th&gt;&lt;/tr&gt;
-	&lt;tr&gt;&lt;td&gt;${0:Data}&lt;/td&gt;&lt;/tr&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;th&gt;${5:Header}&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;${0:Data}&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;</string>
 	<key>name</key>
 	<string>Table</string>
