@@ -714,7 +714,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?&lt;='|")</string>
+			<string>(?!\G)(?&lt;='|"|[^\s&lt;&gt;/])</string>
 			<key>name</key>
 			<string>meta.attribute-with-value.id.html</string>
 			<key>patterns</key>
@@ -792,6 +792,20 @@
 							<string>#entities</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.toc-list.id.html</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?&lt;==)(?:[^\s&lt;&gt;/'"]|/(?!&gt;))+</string>
+					<key>name</key>
+					<string>string.unquoted.html</string>
 				</dict>
 			</array>
 		</dict>
