@@ -17,6 +17,7 @@
 		|\{\{?(if|foreach|capture|literal|foreach|php|section|strip)
 		|\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/)))
 		|array\s?\(\s*$
+		|\[\s*$
 		)</string>
 		<key>foldingStopMarker</key>
 		<string>(?x)
@@ -27,6 +28,7 @@
 		|\{\{?/(if|foreach|capture|literal|foreach|php|section|strip)
 		|^[^{]*\}
 		|^\s*\)[,;]
+		|^\s*\][,;]
 		)</string>
 	</dict>
 	<key>uuid</key>
