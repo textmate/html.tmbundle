@@ -37,7 +37,7 @@
 			</array>
 			<array>
 				<string>/&lt;(?!area|base|basefont|br|col|frame|hr|img|input|isindex|link|meta|param)\w+[^&gt;]*(?&lt;!/)&gt;/</string>
-				<string>/&lt;/\w+&gt;/</string>
+				<string>/&lt;/\S+&gt;/</string>
 			</array>
 		</array>
 		<key>increaseIndentPattern</key>
