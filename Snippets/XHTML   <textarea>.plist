@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>Text Area</string>
 	<key>scope</key>
-	<string>text.html - B:meta.tag</string>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
 	<string>textarea</string>
 	<key>uuid</key>

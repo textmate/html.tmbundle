@@ -10,7 +10,7 @@
 	<key>name</key>
 	<string>Table</string>
 	<key>scope</key>
-	<string>text.html - B:meta.tag</string>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
 	<string>table</string>
 	<key>uuid</key>

@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>Div</string>
 	<key>scope</key>
-	<string>text.html - B:meta.tag</string>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
 	<string>div</string>
 	<key>uuid</key>

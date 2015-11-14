@@ -11,7 +11,7 @@
 	<key>name</key>
 	<string>Form</string>
 	<key>scope</key>
-	<string>text.html - B:meta.tag</string>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
 	<string>form</string>
 	<key>uuid</key>

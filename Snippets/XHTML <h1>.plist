@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>Heading</string>
 	<key>scope</key>
-	<string>text.html - B:meta.tag</string>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
 	<string>h1</string>
 	<key>uuid</key>

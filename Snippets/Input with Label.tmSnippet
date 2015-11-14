@@ -10,7 +10,7 @@
 	<key>name</key>
 	<string>Input with Label</string>
 	<key>scope</key>
-	<string>text.html - B:meta.tag</string>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
 	<string>input</string>
 	<key>uuid</key>

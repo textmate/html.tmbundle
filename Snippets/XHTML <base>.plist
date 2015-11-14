@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>Base</string>
 	<key>scope</key>
-	<string>text.html - B:meta.tag</string>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
 	<string>base</string>
 	<key>uuid</key>
