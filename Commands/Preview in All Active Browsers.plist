@@ -43,22 +43,25 @@ if proclist =~ %r{/Contents/MacOS/Safari.*WebKit}
   active &lt;&lt; "WebKit"
 end
 
-# TODO: Change when Leopard Only
-# On Leopard use the -g option to open in background.
-if os =~ /^10\.(5|6|7)/
-  active.each {|p| `open -g -a #{e_sh(p)} #{e_sh(url)}` }
-else
-  active.each {|p| `open -a #{e_sh(p)} #{e_sh(url)}` }
-end</string>
+active.each {|p| `open -g -a #{e_sh(p)} #{e_sh(url)}` }
+</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>Open Document in Running Browser(s)</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>uuid</key>
 	<string>970EE6B4-A091-11D9-A5A2-000D93C8BE28</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
