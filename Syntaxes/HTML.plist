@@ -16,7 +16,7 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>injections</key>
 	<dict>
-		<key>R:text.html - comment.block</key>
+		<key>R:text.html - (comment.block, source.js.embedded.html)</key>
 		<dict>
 			<key>comment</key>
 			<string>Use R: to ensure this matches after any other injections.</string>
