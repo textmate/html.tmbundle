@@ -547,7 +547,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
+					<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#[xX][0-9a-fA-F]+)(;)</string>
 					<key>name</key>
 					<string>constant.character.entity.html</string>
 				</dict>
