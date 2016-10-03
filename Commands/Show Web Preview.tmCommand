@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>autoRefresh</key>
+	<array>
+		<string>DocumentChanged</string>
+	</array>
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
@@ -16,7 +20,7 @@ cat
 	<key>keyEquivalent</key>
 	<string>^~@p</string>
 	<key>name</key>
-	<string>Show Web Preview</string>
+	<string>Show Preview</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>uuid</key>
