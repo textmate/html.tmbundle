@@ -136,14 +136,14 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>--\s*&gt;</string>
+			<string>--!?&gt;</string>
 			<key>name</key>
 			<string>comment.block.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>--</string>
+					<string>&lt;!--</string>
 					<key>name</key>
 					<string>invalid.illegal.bad-comments-or-CDATA.html</string>
 				</dict>
@@ -202,12 +202,6 @@
 					<string>]](?=&gt;)</string>
 					<key>name</key>
 					<string>constant.other.inline-data.html</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(\s*)(?!--|&gt;)\S(\s*)</string>
-					<key>name</key>
-					<string>invalid.illegal.bad-comments-or-CDATA.html</string>
 				</dict>
 			</array>
 		</dict>
