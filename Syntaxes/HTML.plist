@@ -16,7 +16,7 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>injections</key>
 	<dict>
-		<key>R:text.html - (comment.block, source.js.embedded.html)</key>
+		<key>R:text.html - (comment.block, source.js)</key>
 		<dict>
 			<key>comment</key>
 			<string>Use R: to ensure this matches after any other injections.</string>
@@ -217,57 +217,128 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:style))\b(?![^&gt;]*/&gt;)</string>
-			<key>captures</key>
+			<string>(^[ \t]+)?(?=&lt;(?i:style))</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.style.html</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
+					<string>punctuation.whitespace.embedded.leading.html</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(&lt;/)((?i:style))(&gt;)(?:\s*\n)?</string>
-			<key>name</key>
-			<string>source.css.embedded.html</string>
+			<string>(?!\G)([ \t]*$\n?)?</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.embedded.trailing.html</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
-				</dict>
-				<dict>
 					<key>begin</key>
-					<string>(&gt;)</string>
+					<string>(&lt;)((?i:style))\b</string>
 					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.metadata.style.html</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.html</string>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?=&lt;/(?i:style))</string>
+					<string>(/&gt;)|((&lt;)/)((?i:style))(&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.metadata.style.html</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>source.css</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.embedded.block.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
-							<string>#embedded-code</string>
+							<key>begin</key>
+							<string>\G</string>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.tag.end.html</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(?=/&gt;)|(&gt;)</string>
+							<key>name</key>
+							<string>meta.tag.metadata.style.html</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#tag-stuff</string>
+								</dict>
+							</array>
 						</dict>
 						<dict>
-							<key>include</key>
+							<key>begin</key>
+							<string>(?!\G)</string>
+							<key>end</key>
+							<string>(?=&lt;/(?i:style))</string>
+							<key>name</key>
 							<string>source.css</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#embedded-code</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>source.css</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
@@ -275,110 +346,205 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)(?![^&gt;]*(?i:type.?=.?text/((?!javascript).*)))</string>
+			<string>(^[ \t]+)?(?=&lt;(?i:script))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.script.html</string>
+					<string>punctuation.whitespace.embedded.leading.html</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?&lt;=&lt;/(script|SCRIPT))(&gt;)(?:\s*\n)?</string>
+			<string>(?!\G)([ \t]*$\n?)?</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
+					<string>punctuation.whitespace.embedded.trailing.html</string>
 				</dict>
 			</dict>
-			<key>name</key>
-			<string>source.js.embedded.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
-				</dict>
-				<dict>
 					<key>begin</key>
-					<string>(?&lt;!&lt;/(?:script|SCRIPT))(&gt;)</string>
-					<key>captures</key>
+					<string>(&lt;)((?i:script))\b</string>
+					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.metadata.script.html</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.html</string>
+							<string>punctuation.definition.tag.begin.html</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.tag.script.html</string>
+							<string>entity.name.tag.html</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(&lt;/)((?i:script))</string>
+					<string>(/&gt;)|((&lt;)/)((?i:script))(&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.metadata.script.html</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>source.js</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.embedded.block.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>(^[ \t]+)?(?=//)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.whitespace.comment.leading.js</string>
-								</dict>
-							</dict>
+							<string>\G(?=[^&gt;]*text/javascript)</string>
 							<key>end</key>
-							<string>(?!\G)</string>
+							<string>(?=/&gt;|&lt;/)</string>
 							<key>patterns</key>
 							<array>
 								<dict>
 									<key>begin</key>
-									<string>//</string>
-									<key>beginCaptures</key>
+									<string>\G</string>
+									<key>captures</key>
 									<dict>
-										<key>0</key>
+										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>punctuation.definition.comment.js</string>
+											<string>punctuation.definition.tag.end.html</string>
 										</dict>
 									</dict>
 									<key>end</key>
-									<string>(?=&lt;/script)|\n</string>
+									<string>(?=/&gt;)|(&gt;)</string>
 									<key>name</key>
-									<string>comment.line.double-slash.js</string>
+									<string>meta.tag.metadata.script.html</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#tag-stuff</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>begin</key>
+									<string>(?!\G)</string>
+									<key>end</key>
+									<string>(?=&lt;/(?i:script))</string>
+									<key>name</key>
+									<string>source.js</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>begin</key>
+											<string>(^[ \t]+)?(?=//)</string>
+											<key>beginCaptures</key>
+											<dict>
+												<key>1</key>
+												<dict>
+													<key>name</key>
+													<string>punctuation.whitespace.comment.leading.js</string>
+												</dict>
+											</dict>
+											<key>end</key>
+											<string>(?!\G)</string>
+											<key>patterns</key>
+											<array>
+												<dict>
+													<key>begin</key>
+													<string>//</string>
+													<key>beginCaptures</key>
+													<dict>
+														<key>0</key>
+														<dict>
+															<key>name</key>
+															<string>punctuation.definition.comment.js</string>
+														</dict>
+													</dict>
+													<key>end</key>
+													<string>(?=&lt;/script)|\n</string>
+													<key>name</key>
+													<string>comment.line.double-slash.js</string>
+												</dict>
+											</array>
+										</dict>
+										<dict>
+											<key>begin</key>
+											<string>/\*</string>
+											<key>captures</key>
+											<dict>
+												<key>0</key>
+												<dict>
+													<key>name</key>
+													<string>punctuation.definition.comment.js</string>
+												</dict>
+											</dict>
+											<key>end</key>
+											<string>\*/|(?=&lt;/script)</string>
+											<key>name</key>
+											<string>comment.block.js</string>
+										</dict>
+										<dict>
+											<key>include</key>
+											<string>source.js</string>
+										</dict>
+									</array>
 								</dict>
 							</array>
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>/\*</string>
+							<string>\G</string>
 							<key>captures</key>
 							<dict>
-								<key>0</key>
+								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.comment.js</string>
+									<string>punctuation.definition.tag.end.html</string>
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>\*/|(?=&lt;/script)</string>
+							<string>(?=/&gt;)|(&gt;)</string>
 							<key>name</key>
-							<string>comment.block.js</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>source.js</string>
+							<string>meta.tag.metadata.script.html</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#tag-stuff</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
