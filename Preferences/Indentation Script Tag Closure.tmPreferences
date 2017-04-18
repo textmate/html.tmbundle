@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Indentation - Script Tag Closure</string>
+	<key>scope</key>
+	<string>text.html &gt; meta.embedded.block &gt; meta.tag.metadata.script, text.html &gt; meta.embedded.block &gt; meta.tag.metadata.script &gt; source.js</string>
+	<key>settings</key>
+	<dict>
+		<key>decreaseIndentPattern</key>
+		<string>^\s*&lt;/(?i:script)&gt;</string>
+		<key>increaseIndentPattern</key>
+		<string>&lt;((?i:script))(?=\s|&gt;)\b[^&gt;]*&gt;(?!.*&lt;/\1&gt;)</string>
+		<key>indentNextLinePattern</key>
+		<string>(?=not)possible</string>
+		<key>unIndentedLinePattern</key>
+		<string>(?=not)possible</string>
+	</dict>
+	<key>uuid</key>
+	<string>A62F2377-AE98-4F1B-9675-B2C772C17993</string>
+</dict>
+</plist>
