@@ -441,7 +441,7 @@
 										</dict>
 									</dict>
 									<key>end</key>
-									<string>(&lt;)(?=/(?i:script))</string>
+									<string>((&lt;))(?=/(?i:script))</string>
 									<key>endCaptures</key>
 									<dict>
 										<key>0</key>
@@ -450,6 +450,11 @@
 											<string>meta.tag.metadata.script.html</string>
 										</dict>
 										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.tag.begin.html</string>
+										</dict>
+										<key>2</key>
 										<dict>
 											<key>name</key>
 											<string>source.js</string>
@@ -542,13 +547,18 @@
 									<key>begin</key>
 									<string>(?=(?i:type))</string>
 									<key>end</key>
-									<string>&lt;(?=/(?i:script))</string>
+									<string>(&lt;)(?=/(?i:script))</string>
 									<key>endCaptures</key>
 									<dict>
 										<key>0</key>
 										<dict>
 											<key>name</key>
 											<string>meta.tag.metadata.script.html</string>
+										</dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.tag.begin.html</string>
 										</dict>
 									</dict>
 									<key>patterns</key>
@@ -557,7 +567,15 @@
 											<key>begin</key>
 											<string>\G</string>
 											<key>end</key>
-											<string>&gt;|(?=/&gt;)</string>
+											<string>(&gt;)|(?=/&gt;)</string>
+											<key>endCaptures</key>
+											<dict>
+												<key>1</key>
+												<dict>
+													<key>name</key>
+													<string>punctuation.definition.tag.end.html</string>
+												</dict>
+											</dict>
 											<key>name</key>
 											<string>meta.tag.metadata.script.html</string>
 											<key>patterns</key>
