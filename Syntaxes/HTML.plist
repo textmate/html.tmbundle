@@ -431,13 +431,18 @@
 							<array>
 								<dict>
 									<key>begin</key>
-									<string>&gt;</string>
+									<string>(&gt;)</string>
 									<key>beginCaptures</key>
 									<dict>
 										<key>0</key>
 										<dict>
 											<key>name</key>
 											<string>meta.tag.metadata.script.html</string>
+										</dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.tag.end.html</string>
 										</dict>
 									</dict>
 									<key>end</key>
