@@ -537,7 +537,7 @@
 									<key>begin</key>
 									<string>\G</string>
 									<key>end</key>
-									<string>(?i:(?=/?&gt;|type\s*=\s*('|"|)(?!text/(javascript|ecmascript)|application/((x-)?javascript|ecmascript))\b))</string>
+									<string>(?i:(?=/?&gt;|type\s*=\s*('|"|)(?!text/(javascript|ecmascript)|application/((x-)?javascript|ecmascript)|module)\b))</string>
 									<key>name</key>
 									<string>meta.tag.metadata.script.html</string>
 									<key>patterns</key>
