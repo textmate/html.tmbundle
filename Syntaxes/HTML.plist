@@ -550,6 +550,64 @@
 								</dict>
 								<dict>
 									<key>begin</key>
+									<string>(?=(?i:type\s*=\s*('|"|)(?=text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html))\b))</string>
+									<key>end</key>
+									<string>(&lt;)(?=/(?i:script))</string>
+									<key>endCaptures</key>
+									<dict>
+										<key>0</key>
+										<dict>
+											<key>name</key>
+											<string>meta.tag.metadata.script.html</string>
+										</dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.tag.begin.html</string>
+										</dict>	
+									</dict>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>begin</key>
+											<string>\G</string>
+											<key>end</key>
+											<string>(&gt;)|(?=/&gt;)</string>
+											<key>endCaptures</key>
+											<dict>
+												<key>1</key>
+												<dict>
+													<key>name</key>
+													<string>punctuation.definition.tag.end.html</string>
+												</dict>
+											</dict>
+											<key>name</key>
+											<string>meta.tag.metadata.script.html</string>
+											<key>patterns</key>
+											<array>
+												<dict>
+													<key>include</key>
+													<string>#tag-stuff</string>
+												</dict>
+											</array>
+										</dict>
+										<dict>
+											<key>begin</key>
+											<string>(?!\G)</string>
+											<key>end</key>
+											<string>(?=&lt;/(?i:script))</string>
+											<key>patterns</key>
+											<array>
+												<dict>
+													<key>include</key>
+													<string>text.html.basic</string>
+												</dict>
+											</array>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>begin</key>
 									<string>(?=(?i:type))</string>
 									<key>end</key>
 									<string>(&lt;)(?=/(?i:script))</string>
