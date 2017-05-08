@@ -552,16 +552,22 @@
 									<key>begin</key>
 									<string>(?=(?i:type\s*=\s*('|"|)(?=text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html))\b))</string>
 									<key>end</key>
-									<string>(&amp;lt;)(?=/(?i:script))</string>
+									<string>(&lt;)(?=/(?i:script))</string>
 									<key>endCaptures</key>
 									<array>
 										<dict>
-											<key>name</key>
-											<string>meta.tag.metadata.script.html</string>
+											<key>0</key>
+											<dict>
+												<key>name</key>
+												<string>meta.tag.metadata.script.html</string>
+											</dict>										
 										</dict>
 										<dict>
-											<key>name</key>
-											<string>punctuation.definition.tag.begin.html</string>
+											<key>1</key>
+											<dict>
+												<key>name</key>
+												<string>punctuation.definition.tag.begin.html</string>
+											</dict>	
 										</dict>
 									</array>
 									<key>patterns</key>
@@ -570,7 +576,7 @@
 											<key>begin</key>
 											<string>\G</string>
 											<key>end</key>
-											<string>(&amp;gt;)|(?=/&amp;gt;)</string>
+											<string>(&gt;)|(?=/&gt;)</string>
 											<key>endCaptures</key>
 											<dict>
 												<key>1</key>
@@ -593,7 +599,7 @@
 											<key>begin</key>
 											<string>(?!\G)</string>
 											<key>end</key>
-											<string>(?=&amp;lt;/(?i:script))</string>
+											<string>(?=&lt;/(?i:script))</string>
 											<key>patterns</key>
 											<array>
 												<dict>
