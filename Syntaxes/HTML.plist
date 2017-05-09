@@ -552,7 +552,7 @@
 									<key>begin</key>
 									<string>(?=(?i:type\s*=\s*('|"|)(?=text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html))\b))</string>
 									<key>end</key>
-									<string>(&lt;)(?=/(?i:script))</string>
+									<string>((&lt;))(?=/(?i:script))</string>
 									<key>endCaptures</key>
 									<dict>
 										<key>0</key>
@@ -564,7 +564,12 @@
 										<dict>
 											<key>name</key>
 											<string>punctuation.definition.tag.begin.html</string>
-										</dict>	
+										</dict>
+										<key>2</key>
+										<dict>
+											<key>name</key>
+											<string>text.html.basic</string>
+										</dict>
 									</dict>
 									<key>patterns</key>
 									<array>
@@ -596,6 +601,8 @@
 											<string>(?!\G)</string>
 											<key>end</key>
 											<string>(?=&lt;/(?i:script))</string>
+											<key>name</key>
+											<string>text.html.basic</string>
 											<key>patterns</key>
 											<array>
 												<dict>
