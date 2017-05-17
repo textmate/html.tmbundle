@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;video src="${1:vid.mp4}"${2: poster="${3:posterimage.jpg}"}${4: preload="none"}${5: autoplay}&gt;
+	&lt;track kind="${6:subtitles}" src="${7:foo.en.vtt}" srclang="${8:en}" label="${9:English}"&gt;
+&lt;/video&gt;</string>
+	<key>name</key>
+	<string>Video</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>video</string>
+	<key>uuid</key>
+	<string>1F6097B8-D6D9-4C93-9DE7-03A2BBD0B86B</string>
+</dict>
+</plist>

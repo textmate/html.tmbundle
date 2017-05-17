@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;del${1: datetime="${2:`date +"%Y-%m-%dT%T%z" | sed 's/00/:00/'`}"}&gt;${0:$TM_SELECTED_TEXT}&lt;/del&gt;</string>
+	<key>name</key>
+	<string>Deleted Text</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>del</string>
+	<key>uuid</key>
+	<string>8DDBF2BE-1F1C-4257-A8D0-83BE4E4D824D</string>
+</dict>
+</plist>

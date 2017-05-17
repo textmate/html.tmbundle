@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;q${1: cite="${2:http://en.wikipedia.org/wiki/Kenny_McCormick#Cultural_impact}"}&gt;${0:$TM_SELECTED_TEXT}&lt;/q&gt;</string>
+	<key>name</key>
+	<string>Inline Quotation</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>q</string>
+	<key>uuid</key>
+	<string>F21CAC7B-D740-4954-9B17-B9656B39A57A</string>
+</dict>
+</plist>
