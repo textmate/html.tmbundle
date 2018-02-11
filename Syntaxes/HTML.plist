@@ -147,10 +147,6 @@
 					<key>name</key>
 					<string>invalid.illegal.bad-comments-or-CDATA.html</string>
 				</dict>
-				<dict>
-					<key>include</key>
-					<string>#embedded-code</string>
-				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -210,10 +206,6 @@
 					<string>invalid.illegal.bad-comments-or-CDATA.html</string>
 				</dict>
 			</array>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#embedded-code</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -330,10 +322,6 @@
 							<string>source.css</string>
 							<key>patterns</key>
 							<array>
-								<dict>
-									<key>include</key>
-									<string>#embedded-code</string>
-								</dict>
 								<dict>
 									<key>include</key>
 									<string>source.css</string>
@@ -821,16 +809,6 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>embedded-code</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#python</string>
-				</dict>
-			</array>
-		</dict>
 		<key>entities</key>
 		<dict>
 			<key>patterns</key>
@@ -862,22 +840,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>python</key>
-		<dict>
-			<key>begin</key>
-			<string>(?:^\s*)&lt;\?python(?!.*\?&gt;)</string>
-			<key>end</key>
-			<string>\?&gt;(?:\s*$\n)?</string>
-			<key>name</key>
-			<string>source.python.embedded.html</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>source.python</string>
-				</dict>
-			</array>
-		</dict>
 		<key>string-double-quoted</key>
 		<dict>
 			<key>begin</key>
@@ -904,10 +866,6 @@
 			<string>string.quoted.double.html</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#embedded-code</string>
-				</dict>
 				<dict>
 					<key>include</key>
 					<string>#entities</string>
@@ -940,10 +898,6 @@
 			<string>string.quoted.single.html</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#embedded-code</string>
-				</dict>
 				<dict>
 					<key>include</key>
 					<string>#entities</string>
@@ -1009,10 +963,6 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#embedded-code</string>
-						</dict>
-						<dict>
-							<key>include</key>
 							<string>#entities</string>
 						</dict>
 					</array>
@@ -1044,10 +994,6 @@
 					<string>string.quoted.single.html</string>
 					<key>patterns</key>
 					<array>
-						<dict>
-							<key>include</key>
-							<string>#embedded-code</string>
-						</dict>
 						<dict>
 							<key>include</key>
 							<string>#entities</string>
@@ -1089,10 +1035,6 @@
 				<dict>
 					<key>include</key>
 					<string>#string-single-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#embedded-code</string>
 				</dict>
 				<dict>
 					<key>include</key>
