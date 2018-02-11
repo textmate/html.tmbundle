@@ -827,10 +827,6 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#smarty</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#python</string>
 				</dict>
 			</array>
@@ -879,48 +875,6 @@
 				<dict>
 					<key>include</key>
 					<string>source.python</string>
-				</dict>
-			</array>
-		</dict>
-		<key>smarty</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>(\{(literal)\})</string>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>source.smarty.embedded.html</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>support.function.built-in.smarty</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(\{/(literal)\})</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>{{|{</string>
-					<key>disabled</key>
-					<integer>1</integer>
-					<key>end</key>
-					<string>}}|}</string>
-					<key>name</key>
-					<string>source.smarty.embedded.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>source.smarty</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>
