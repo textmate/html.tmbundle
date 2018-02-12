@@ -546,7 +546,7 @@
 									<key>begin</key>
 									<string>(?=(?i:type\s*=\s*('|"|)(text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html)[\s"'&gt;])))</string>
 									<key>end</key>
-									<string>(?&lt;=&gt;)(((&lt;)))(?=/(?i:script))|((&lt;))(?=/(?i:script))</string>
+									<string>(?&lt;=&gt;)(((&lt;)))(?=/(?i:script))|((&lt;))(?=/(?i:script))|(?=/&gt;)</string>
 									<key>endCaptures</key>
 									<dict>
 										<key>0</key>
@@ -626,7 +626,7 @@
 									<key>begin</key>
 									<string>(?=(?i:type))</string>
 									<key>end</key>
-									<string>(?&lt;=&gt;)((&lt;))(?=/(?i:script))|(&lt;)(?=/(?i:script))</string>
+									<string>(?&lt;=&gt;)((&lt;))(?=/(?i:script))|(&lt;)(?=/(?i:script))|(?=/&gt;)</string>
 									<key>endCaptures</key>
 									<dict>
 										<key>0</key>
