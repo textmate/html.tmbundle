@@ -50,13 +50,13 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.xml.html</string>
+					<string>entity.name.tag.html</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>(\?&gt;)</string>
 			<key>name</key>
-			<string>meta.tag.preprocessor.xml.html</string>
+			<string>meta.tag.metadata.processing.xml.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -112,7 +112,7 @@
 			<key>end</key>
 			<string>&gt;</string>
 			<key>name</key>
-			<string>meta.tag.sgml.html</string>
+			<string>meta.tag.metadata.processing.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -123,13 +123,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.tag.doctype.html</string>
+							<string>entity.name.tag.html</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>(?=&gt;)</string>
-					<key>name</key>
-					<string>meta.tag.sgml.doctype.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -693,7 +691,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(&lt;/?)((?i:body|head|html)\b)</string>
+			<string>(&lt;/?)((?i:body|head|html|address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\b(?!-))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -704,7 +702,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.structure.any.html</string>
+					<string>entity.name.tag.html</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -729,7 +727,7 @@
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.structure.any.html</string>
+					<string>entity.name.tag.html</string>
 				</dict>
 				<key>6</key>
 				<dict>
@@ -738,63 +736,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.structure.any.html</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>(&lt;/?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\b(?!-))</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.block.any.html</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(&gt;)(((&lt;)/)(\2)(&gt;))?</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>meta.scope.between-tag-pair.html</string>
-				</dict>
-				<key>5</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.block.any.html</string>
-				</dict>
-				<key>6</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.block.any.html</string>
+			<string>meta.tag.structure.$2.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -816,7 +758,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.inline.any.html</string>
+					<string>entity.name.tag.html</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -830,7 +772,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.any.html</string>
+			<string>meta.tag.inline.$2.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -852,7 +794,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.custom.html</string>
+					<string>entity.name.tag.html</string>
 				</dict>
 			</dict>
 			<key>end</key>
