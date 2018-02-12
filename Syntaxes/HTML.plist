@@ -749,7 +749,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(&lt;/?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\b)</string>
+			<string>(&lt;/?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\b(?!-))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
