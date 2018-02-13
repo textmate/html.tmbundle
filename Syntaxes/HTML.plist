@@ -156,7 +156,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(^[ \t]+)?(?=&lt;(?i:style))</string>
+			<string>(^[ \t]+)?(?=&lt;(?i:style)\b(?!-))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -306,7 +306,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(^[ \t]+)?(?=&lt;(?i:script))</string>
+			<string>(^[ \t]+)?(?=&lt;(?i:script)\b(?!-))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
