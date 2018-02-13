@@ -529,7 +529,37 @@
 									<key>begin</key>
 									<string>\G</string>
 									<key>end</key>
-									<string>(?i:(?=/?&gt;|type(?=[\s=])(?!\s*=\s*('|"|)(text/(javascript|ecmascript|babel)|application/((x-)?javascript|ecmascript|babel)|module)[\s"'&gt;])))</string>
+									<string>(?ix:
+										(?=/?&gt;											# Tag without type attribute
+										  | type(?=[\s=])
+										  	(?!\s*=\s*
+												(
+													''								# Empty
+												  | ""									#   Values
+												  | ('|"|)
+													(
+														text/							# Text mime-types
+														(
+															javascript(1\.[0-5])?
+														  | x-javascript
+														  | jscript
+														  | livescript
+														  | (x-)?ecmascript
+														  | babel						# Javascript variant currently
+														  								#   recognized as such
+													  	)
+													  | application/					# Application mime-types
+													  	(
+															(x-)?javascript
+														  | (x-)?ecmascript
+														)
+													  | module
+												  	)
+													[\s"'&gt;]
+												)
+											)
+										)
+									)</string>
 									<key>name</key>
 									<string>meta.tag.metadata.script.html</string>
 									<key>patterns</key>
@@ -542,7 +572,19 @@
 								</dict>
 								<dict>
 									<key>begin</key>
-									<string>(?=(?i:type\s*=\s*('|"|)(text/(x-handlebars|(x-(handlebars-)?|ng-)?template|html)[\s"'&gt;])))</string>
+									<string>(?ix:
+										(?=
+											type\s*=\s*
+											('|"|)
+											text/
+											(
+												x-handlebars
+											  | (x-(handlebars-)?|ng-)?template
+											  | html
+											)
+											[\s"'&gt;]
+										)
+									)</string>
 									<key>end</key>
 									<string>(?&lt;=&gt;)(((&lt;)))(?=/(?i:script))|((&lt;))(?=/(?i:script))|(?=/&gt;)</string>
 									<key>endCaptures</key>
