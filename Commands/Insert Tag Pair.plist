@@ -18,7 +18,7 @@
 
 # single tags
 single_no_arg = /^(?:br|hr)$/i
-single        = /^(?:img|meta|link|input|base|area|col|frame|param)$/i
+single        = /^(?:area|base|basefont|br|col|embed|frame|hr|img|input|isindex|link|meta|param|source|track|wbr)$/i
 other_tag     = /^[\w\-:_]+$/i
 
 # we are not in HTML mode, so let’s scrap the above hardcoded tag lists
@@ -49,13 +49,21 @@ print suffix
 	<string>word</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^&lt;</string>
 	<key>name</key>
 	<string>Insert Open/Close Tag (With Current Word)</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>snippet</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
 	<key>uuid</key>
 	<string>2ED44A32-C353-447F-BAE4-E3522DB6944D</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
