@@ -61,7 +61,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -279,7 +279,7 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#tag-stuff</string>
+									<string>#attribute</string>
 								</dict>
 							</array>
 						</dict>
@@ -564,7 +564,7 @@
 									<array>
 										<dict>
 											<key>include</key>
-											<string>#tag-stuff</string>
+											<string>#attribute</string>
 										</dict>
 									</array>
 								</dict>
@@ -639,7 +639,7 @@
 											<array>
 												<dict>
 													<key>include</key>
-													<string>#tag-stuff</string>
+													<string>#attribute</string>
 												</dict>
 											</array>
 										</dict>
@@ -709,7 +709,7 @@
 											<array>
 												<dict>
 													<key>include</key>
-													<string>#tag-stuff</string>
+													<string>#attribute</string>
 												</dict>
 											</array>
 										</dict>
@@ -781,7 +781,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -837,7 +837,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -873,7 +873,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -909,7 +909,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -950,7 +950,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -991,7 +991,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -1032,7 +1032,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -1073,7 +1073,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -1114,7 +1114,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -1155,7 +1155,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -1216,7 +1216,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-stuff</string>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
@@ -1233,6 +1233,143 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>attribute</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>((s(hape|cope|t(yle|ep|art)|ize(s)?|p(ellcheck|an)|elected|lot|andbox|rc(set|doc|lang)?)|h(ttp-equiv|i(dden|gh)|e(ight|aders)|ref(lang)?)|n(o(nce|validate|module)|ame)|c(h(ecked|arset)|ite|o(nt(ent(editable)?|rols)|ords|l(s(pan)?|or))|lass|rossorigin)|t(ype(mustmatch)?|itle|a(rget|bindex)|ranslate)|i(s(map)?|n(tegrity|putmode)|tem(scope|type|id|prop|ref)|d)|op(timum|en)|d(i(sabled|r(name)?)|ownload|e(coding|f(er|ault))|at(etime|a)|raggable)|usemap|p(ing|oster|la(ysinline|ceholder)|attern|reload)|enctype|value|kind|for(m(novalidate|target|enctype|action|method)?)?|w(idth|rap)|l(ist|o(op|w)|a(ng|bel))|a(s(ync)?|c(ce(sskey|pt(-charset)?)|tion)|uto(c(omplete|apitalize)|play|focus)|l(t|low(usermedia|paymentrequest|fullscreen))|bbr)|r(ows(pan)?|e(versed|quired|ferrerpolicy|l|adonly))|m(in(length)?|u(ted|ltiple)|e(thod|dia)|a(nifest|x(length)?))))(?![\w:-])</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.html</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>HTML5 attributes, not event handlers</string>
+					<key>end</key>
+					<string>(?=\s*+[^=\s])</string>
+					<key>name</key>
+					<string>meta.attribute.$1.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute-interior</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>on(s(croll|t(orage|alled)|u(spend|bmit)|e(curitypolicyviolation|ek(ing|ed)|lect))|hashchange|c(hange|o(ntextmenu|py)|u(t|echange)|l(ick|ose)|an(cel|play(through)?))|t(imeupdate|oggle)|in(put|valid)|o(nline|ffline)|d(urationchange|r(op|ag(start|over|e(n(ter|d)|xit)|leave)?)|blclick)|un(handledrejection|load)|p(opstate|lay(ing)?|a(ste|use|ge(show|hide))|rogress)|e(nded|rror|mptied)|volumechange|key(down|up|press)|focus|w(heel|aiting)|l(oad(start|e(nd|d(data|metadata)))?|anguagechange)|a(uxclick|fterprint|bort)|r(e(s(ize|et)|jectionhandled)|atechange)|m(ouse(o(ut|ver)|down|up|enter|leave|move)|essage(error)?)|b(efore(unload|print)|lur))(?![\w:-])</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.html</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>HTML5 attributes, event handlers</string>
+					<key>end</key>
+					<string>(?=\s*+[^=\s])</string>
+					<key>name</key>
+					<string>meta.attribute.event-handler.$1.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute-interior</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(data-[a-z\-]+)(?![\w:-])</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.html</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>HTML5 attributes, data-*</string>
+					<key>end</key>
+					<string>(?=\s*+[^=\s])</string>
+					<key>name</key>
+					<string>meta.attribute.data-x.$1.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute-interior</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(align|bgcolor|border)(?![\w:-])</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.deprecated.entity.other.attribute-name.html</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>HTML attributes, deprecated</string>
+					<key>end</key>
+					<string>(?=\s*+[^=\s])</string>
+					<key>name</key>
+					<string>meta.attribute.$1.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute-interior</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>([^\x{0020}"'&gt;/=\x{0000}-\x{001F}\x{007F}-\x{009F}\x{FDD0}-\x{FDEF}\x{FFFE}\x{FFFF}\x{1FFFE}\x{1FFFF}\x{2FFFE}\x{2FFFF}\x{3FFFE}\x{3FFFF}\x{4FFFE}\x{4FFFF}\x{5FFFE}\x{5FFFF}\x{6FFFE}\x{6FFFF}\x{7FFFE}\x{7FFFF}\x{8FFFE}\x{8FFFF}\x{9FFFE}\x{9FFFF}\x{AFFFE}\x{AFFFF}\x{BFFFE}\x{BFFFF}\x{CFFFE}\x{CFFFF}\x{DFFFE}\x{DFFFF}\x{EFFFE}\x{EFFFF}\x{FFFFE}\x{FFFFF}\x{10FFFE}\x{10FFFF}]+)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.html</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Anything else that is valid</string>
+					<key>end</key>
+					<string>(?=\s*+[^=\s])</string>
+					<key>name</key>
+					<string>meta.attribute.unrecognized.$1.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute-interior</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\S+</string>
+					<key>name</key>
+					<string>invalid.illegal.character-not-allowed-here.html</string>
+				</dict>
+			</array>
+		</dict>
 		<key>attribute-interior</key>
 		<dict>
 			<key>patterns</key>
@@ -1429,143 +1566,6 @@
 					<string>&amp;(?=[a-zA-Z0-9]+;)</string>
 					<key>name</key>
 					<string>invalid.illegal.ambiguous-ampersand.html</string>
-				</dict>
-			</array>
-		</dict>
-		<key>tag-stuff</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>((s(hape|cope|t(yle|ep|art)|ize(s)?|p(ellcheck|an)|elected|lot|andbox|rc(set|doc|lang)?)|h(ttp-equiv|i(dden|gh)|e(ight|aders)|ref(lang)?)|n(o(nce|validate|module)|ame)|c(h(ecked|arset)|ite|o(nt(ent(editable)?|rols)|ords|l(s(pan)?|or))|lass|rossorigin)|t(ype(mustmatch)?|itle|a(rget|bindex)|ranslate)|i(s(map)?|n(tegrity|putmode)|tem(scope|type|id|prop|ref)|d)|op(timum|en)|d(i(sabled|r(name)?)|ownload|e(coding|f(er|ault))|at(etime|a)|raggable)|usemap|p(ing|oster|la(ysinline|ceholder)|attern|reload)|enctype|value|kind|for(m(novalidate|target|enctype|action|method)?)?|w(idth|rap)|l(ist|o(op|w)|a(ng|bel))|a(s(ync)?|c(ce(sskey|pt(-charset)?)|tion)|uto(c(omplete|apitalize)|play|focus)|l(t|low(usermedia|paymentrequest|fullscreen))|bbr)|r(ows(pan)?|e(versed|quired|ferrerpolicy|l|adonly))|m(in(length)?|u(ted|ltiple)|e(thod|dia)|a(nifest|x(length)?))))(?![\w:-])</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>entity.other.attribute-name.html</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>HTML5 attributes, not event handlers</string>
-					<key>end</key>
-					<string>(?=\s*+[^=\s])</string>
-					<key>name</key>
-					<string>meta.attribute.$1.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#attribute-interior</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>on(s(croll|t(orage|alled)|u(spend|bmit)|e(curitypolicyviolation|ek(ing|ed)|lect))|hashchange|c(hange|o(ntextmenu|py)|u(t|echange)|l(ick|ose)|an(cel|play(through)?))|t(imeupdate|oggle)|in(put|valid)|o(nline|ffline)|d(urationchange|r(op|ag(start|over|e(n(ter|d)|xit)|leave)?)|blclick)|un(handledrejection|load)|p(opstate|lay(ing)?|a(ste|use|ge(show|hide))|rogress)|e(nded|rror|mptied)|volumechange|key(down|up|press)|focus|w(heel|aiting)|l(oad(start|e(nd|d(data|metadata)))?|anguagechange)|a(uxclick|fterprint|bort)|r(e(s(ize|et)|jectionhandled)|atechange)|m(ouse(o(ut|ver)|down|up|enter|leave|move)|essage(error)?)|b(efore(unload|print)|lur))(?![\w:-])</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>entity.other.attribute-name.html</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>HTML5 attributes, event handlers</string>
-					<key>end</key>
-					<string>(?=\s*+[^=\s])</string>
-					<key>name</key>
-					<string>meta.attribute.event-handler.$1.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#attribute-interior</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(data-[a-z\-]+)(?![\w:-])</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>entity.other.attribute-name.html</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>HTML5 attributes, data-*</string>
-					<key>end</key>
-					<string>(?=\s*+[^=\s])</string>
-					<key>name</key>
-					<string>meta.attribute.data-x.$1.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#attribute-interior</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(align|bgcolor|border)(?![\w:-])</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>invalid.deprecated.entity.other.attribute-name.html</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>HTML attributes, deprecated</string>
-					<key>end</key>
-					<string>(?=\s*+[^=\s])</string>
-					<key>name</key>
-					<string>meta.attribute.$1.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#attribute-interior</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>([^\x{0020}"'&gt;/=\x{0000}-\x{001F}\x{007F}-\x{009F}\x{FDD0}-\x{FDEF}\x{FFFE}\x{FFFF}\x{1FFFE}\x{1FFFF}\x{2FFFE}\x{2FFFF}\x{3FFFE}\x{3FFFF}\x{4FFFE}\x{4FFFF}\x{5FFFE}\x{5FFFF}\x{6FFFE}\x{6FFFF}\x{7FFFE}\x{7FFFF}\x{8FFFE}\x{8FFFF}\x{9FFFE}\x{9FFFF}\x{AFFFE}\x{AFFFF}\x{BFFFE}\x{BFFFF}\x{CFFFE}\x{CFFFF}\x{DFFFE}\x{DFFFF}\x{EFFFE}\x{EFFFF}\x{FFFFE}\x{FFFFF}\x{10FFFE}\x{10FFFF}]+)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>entity.other.attribute-name.html</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Anything else that is valid</string>
-					<key>end</key>
-					<string>(?=\s*+[^=\s])</string>
-					<key>name</key>
-					<string>meta.attribute.unrecognized.$1.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#attribute-interior</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\S+</string>
-					<key>name</key>
-					<string>invalid.illegal.character-not-allowed-here.html</string>
 				</dict>
 			</array>
 		</dict>
