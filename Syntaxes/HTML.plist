@@ -1665,7 +1665,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\S+</string>
+					<string>[^\s&gt;]+</string>
 					<key>name</key>
 					<string>invalid.illegal.character-not-allowed-here.html</string>
 				</dict>
