@@ -731,7 +731,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(&lt;/?)((?i:base|link|meta|noscript|script|style|title)\b(?!-))</string>
+			<string>(&lt;/?)((?i:base|link|meta|noscript|title)\b(?!-))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
