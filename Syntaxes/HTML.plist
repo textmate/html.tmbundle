@@ -104,53 +104,76 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>&lt;!</string>
-			<key>captures</key>
+			<string>&lt;!(?=(?i:DOCTYPE\s))</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
+					<string>punctuation.definition.tag.begin.html</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
 			<key>name</key>
-			<string>meta.tag.metadata.processing.html</string>
+			<string>meta.tag.metadata.doctype.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>(?i:DOCTYPE)</string>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.tag.html</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?=&gt;)</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>"[^"&gt;]*"</string>
-							<key>name</key>
-							<string>string.quoted.double.doctype.identifiers-and-DTDs.html</string>
-						</dict>
-					</array>
+					<key>match</key>
+					<string>\G(?i:DOCTYPE)</string>
+					<key>name</key>
+					<string>entity.name.tag.html</string>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>\[CDATA\[</string>
+					<string>"</string>
 					<key>end</key>
-					<string>]](?=&gt;)</string>
+					<string>"</string>
 					<key>name</key>
-					<string>constant.other.inline-data.html</string>
+					<string>string.quoted.double.html</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s&gt;]+</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.html</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>&lt;!\[CDATA\[</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>string.other.inline-data.html</string>
+			<key>end</key>
+			<string>]]&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.metadata.cdata.html</string>
 		</dict>
 		<dict>
 			<key>begin</key>
