@@ -16,10 +16,10 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>injections</key>
 	<dict>
-		<key>R:text.html - (comment.block, text.html source)</key>
+		<key>R:text.html - (comment.block, text.html meta.embedded, meta.tag.*.*.html, meta.tag.*.*.*.html)</key>
 		<dict>
 			<key>comment</key>
-			<string>Use R: to ensure this matches after any other injections.</string>
+			<string>Uses R: to ensure this matches after any other injections.</string>
 			<key>patterns</key>
 			<array>
 				<dict>
