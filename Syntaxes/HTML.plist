@@ -1247,12 +1247,6 @@
 			<key>include</key>
 			<string>#entities</string>
 		</dict>
-		<dict>
-			<key>match</key>
-			<string>&lt;&gt;</string>
-			<key>name</key>
-			<string>invalid.illegal.incomplete.html</string>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
