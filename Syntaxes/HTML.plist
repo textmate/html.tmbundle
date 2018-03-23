@@ -1457,7 +1457,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)((?i:base|link|meta|noscript|title)\b(?!-))</string>
+					<string>(?i)(&lt;)(base|link|meta)(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1472,37 +1472,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(/?&gt;)(((&lt;)/)(\2)(&gt;))?</string>
+					<string>/?&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.tag.end.html</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.tag.begin.html</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>meta.scope.between-tag-pair.html</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.tag.html</string>
-						</dict>
-						<key>6</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.metadata.$2.html</string>
+					<string>meta.tag.metadata.$2.void.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1513,7 +1493,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)((?i:address|article|aside|blockquote|body|button|caption|col|colgroup|datalist|dd|details|dialog|div|dl|dt|fieldset|figcaption|figure|footer|form|head|header|hgroup|hr|html|h[1-6]|input|label|legend|li|main|map|menu|meter|nav|ol|optgroup|option|output|p|pre|progress|section|select|slot|summary|table|tbody|td|template|textarea|tfoot|th|thead|tr|ul)\b(?!-))</string>
+					<string>(?i)(&lt;)(noscript|title)(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1528,37 +1508,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(/?&gt;)(((&lt;)/)(\2)(&gt;))?</string>
+					<string>&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.tag.end.html</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.tag.begin.html</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>meta.scope.between-tag-pair.html</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.tag.html</string>
-						</dict>
-						<key>6</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.structure.$2.html</string>
+					<string>meta.tag.metadata.$2.start.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1569,7 +1529,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)((?i:a|abbr|area|b|bdi|bdo|br|cite|code|data|del|dfn|em|i|ins|kbd|mark|q|rp|rt|ruby|s|samp|small|span|strong|sub|sup|time|u|var|wbr)\b(?!-))</string>
+					<string>(?i)(&lt;/)(noscript|title)(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1584,17 +1544,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?: ?/)?&gt;)</string>
+					<string>&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.inline.$2.html</string>
+					<string>meta.tag.metadata.$2.end.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1605,7 +1565,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)((?i:audio|canvas|embed|iframe|img|object|param|picture|source|track|video)\b(?!-))</string>
+					<string>(?i)(&lt;)(col|hr|input)(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1620,17 +1580,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?: ?/)?&gt;)</string>
+					<string>/?&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.object.$2.html</string>
+					<string>meta.tag.structure.$2.void.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1641,7 +1601,295 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)(((?i:basefont|isindex))\b(?!-))</string>
+					<string>(?i)(&lt;)(address|article|aside|blockquote|body|button|caption|colgroup|datalist|dd|details|dialog|div|dl|dt|fieldset|figcaption|figure|footer|form|head|header|hgroup|html|h[1-6]|label|legend|li|main|map|menu|meter|nav|ol|optgroup|option|output|p|pre|progress|section|select|slot|summary|table|tbody|td|template|textarea|tfoot|th|thead|tr|ul)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.structure.$2.start.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;/)(address|article|aside|blockquote|body|button|caption|colgroup|datalist|dd|details|dialog|div|dl|dt|fieldset|figcaption|figure|footer|form|head|header|hgroup|html|h[1-6]|label|legend|li|main|map|menu|meter|nav|ol|optgroup|option|output|p|pre|progress|section|select|slot|summary|table|tbody|td|template|textarea|tfoot|th|thead|tr|ul)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.structure.$2.end.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)(area|br|wbr)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>/?&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.inline.$2.void.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)(a|abbr|b|bdi|bdo|cite|code|data|del|dfn|em|i|ins|kbd|mark|q|rp|rt|ruby|s|samp|small|span|strong|sub|sup|time|u|var)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.inline.$2.start.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;/)(a|abbr|b|bdi|bdo|cite|code|data|del|dfn|em|i|ins|kbd|mark|q|rp|rt|ruby|s|samp|small|span|strong|sub|sup|time|u|var)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.inline.$2.end.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)(embed|img|param|source|track)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>/?&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.object.$2.void.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)(audio|canvas|iframe|object|picture|video)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.object.$2.start.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;/)(audio|canvas|iframe|object|picture|video)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.object.$2.end.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)((basefont|isindex))(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1661,17 +1909,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?: ?/)?&gt;)</string>
+					<string>/?&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.metadata.$2.html</string>
+					<string>meta.tag.metadata.$2.void.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1682,7 +1930,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)(((?i:center|frameset|menu|noembed|noframes))\b(?!-))</string>
+					<string>(?i)(&lt;)((center|frameset|noembed|noframes))(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1702,17 +1950,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?: ?/)?&gt;)</string>
+					<string>&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.structure.$2.html</string>
+					<string>meta.tag.structure.$2.start.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1723,7 +1971,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)(((?i:acronym|big|blink|font|strike|tt|xmp))\b(?!-))</string>
+					<string>(?i)(&lt;/)((center|frameset|noembed|noframes))(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1743,17 +1991,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?: ?/)?&gt;)</string>
+					<string>&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.inline.$2.html</string>
+					<string>meta.tag.structure.$2.end.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1764,7 +2012,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)(((?i:applet|frame))\b(?!-))</string>
+					<string>(?i)(&lt;)((acronym|big|blink|font|strike|tt|xmp))(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1784,17 +2032,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?: ?/)?&gt;)</string>
+					<string>&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.object.$2.html</string>
+					<string>meta.tag.inline.$2.start.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1805,7 +2053,171 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)(((?i:dir|keygen|listing|menuitem|plaintext|spacer))\b(?!-))</string>
+					<string>(?i)(&lt;/)((acronym|big|blink|font|strike|tt|xmp))(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.deprecated.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.inline.$2.end.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)((frame))(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.deprecated.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>/?&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.object.$2.void.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)((applet))(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.deprecated.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.object.$2.start.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;/)((applet))(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.deprecated.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.object.$2.end.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(&lt;)((dir|keygen|listing|menuitem|plaintext|spacer))(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1825,17 +2237,17 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>((?: ?/)?&gt;)</string>
+					<string>&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.other.$2.html</string>
+					<string>meta.tag.other.$2.start.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1846,7 +2258,48 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)((?i:[a-z][.0-9_a-z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}]*-[.0-9_a-z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}]*))</string>
+					<string>(?i)(&lt;/)((dir|keygen|listing|menuitem|plaintext|spacer))(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.no-longer-supported.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.other.$2.end.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#attribute</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&lt;)([a-zA-Z][.0-9_a-zA-Z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}]*-[.0-9_a-zA-Z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}]*)(?=\s|/?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1861,7 +2314,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(/&gt;)|(&gt;)(((&lt;)/)(\2)(&gt;))?</string>
+					<string>/?&gt;</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1869,34 +2322,45 @@
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
-						<key>2</key>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.custom.start.html</string>
+					<key>patterns</key>
+					<array>
 						<dict>
-							<key>name</key>
-							<string>punctuation.definition.tag.end.html</string>
+							<key>include</key>
+							<string>#attribute</string>
 						</dict>
-						<key>4</key>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&lt;/)([a-zA-Z][.0-9_a-zA-Z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}]*-[.0-9_a-zA-Z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}]*)(?=\s|/?&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.begin.html</string>
 						</dict>
-						<key>5</key>
+						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>meta.scope.between-tag-pair.html</string>
+							<string>entity.name.tag.html</string>
 						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.tag.custom.html</string>
-						</dict>
-						<key>7</key>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.custom.html</string>
+					<string>meta.tag.custom.end.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
