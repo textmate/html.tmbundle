@@ -117,30 +117,8 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>&lt;!\[CDATA\[</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
-				</dict>
-			</dict>
-			<key>contentName</key>
-			<string>string.other.inline-data.html</string>
-			<key>end</key>
-			<string>]]&gt;</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.metadata.cdata.html</string>
+			<key>include</key>
+			<string>#cdata</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -692,6 +670,33 @@
 				</dict>
 			</array>
 		</dict>
+		<key>cdata</key>
+		<dict>
+			<key>begin</key>
+			<string>&lt;!\[CDATA\[</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>string.other.inline-data.html</string>
+			<key>end</key>
+			<string>]]&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.metadata.cdata.html</string>
+		</dict>
 		<key>comment</key>
 		<dict>
 			<key>begin</key>
@@ -1000,6 +1005,10 @@
 						<dict>
 							<key>include</key>
 							<string>#comment</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#cdata</string>
 						</dict>
 						<dict>
 							<key>captures</key>
@@ -1740,6 +1749,10 @@
 						<dict>
 							<key>include</key>
 							<string>#comment</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#cdata</string>
 						</dict>
 						<dict>
 							<key>captures</key>
