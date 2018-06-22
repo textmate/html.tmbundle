@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
@@ -14,14 +14,22 @@
 require ENV['TM_SUPPORT_PATH'] + '/lib/ui.rb'
 require ENV['TM_SUPPORT_PATH'] + '/lib/exit_codes.rb'
 
-result = `"${TM_TIDY:-tidy}" -f /tmp/tm_tidy_errors -iq -utf8 \
-          -wrap 0 --tab-size $TM_TAB_SIZE --indent-spaces $TM_TAB_SIZE \
-		--indent yes \
-          ${TM_XHTML:+-asxhtml --output-xhtml yes} \
+if ENV['TM_SOFT_TABS'] == "NO"
+  tabs = '--indent-with-tabs yes'
+else
+  tabs = ''
+end
+
+
+result = `"${TM_TIDY:-$TM_BUNDLE_SUPPORT/bin/tidy}" --error-file /tmp/tm_tidy_errors -q \
+          --wrap 0 \
+          --indent yes #{tabs} \
+          --tab-size $TM_TAB_SIZE --indent-spaces $TM_TAB_SIZE \
+          --keep-tabs yes \
           ${TM_SELECTED_TEXT:+--show-body-only yes} \
           --enclose-text yes \
-          --doctype strict \
-		--wrap-php no \
+          --doctype html5 \
+          --wrap-php no \
           --tidy-mark no`
 status = $?.exitstatus
 
@@ -49,36 +57,29 @@ elsif status == 1 # Warnings - use output but also display notification with war
 
 end
 
-if ENV['TM_SOFT_TABS'] == "YES"
-  print result
-else
-  in_pre = false
-  result.each_line do |line|
-    unless in_pre
-      tab_size = ENV["TM_TAB_SIZE"].to_i
-      space, text = /( *)(.*)/m.match(line)[1..2]
-      line = "\t" * (space.length / tab_size).floor + " "  * (space.length % tab_size) + text
-    end
-    
-    print line
-  
-    in_pre = true  if line.include?("&lt;pre&gt;")
-    in_pre = false if line.include?("&lt;/pre&gt;")
-  end
-end</string>
+print result
+</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^H</string>
 	<key>lineCaptureRegister</key>
 	<string>1</string>
 	<key>name</key>
 	<string>Tidy</string>
-	<key>output</key>
-	<string>replaceSelectedText</string>
+	<key>outputCaret</key>
+	<string>heuristic</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>uuid</key>
 	<string>45F92B81-6F0E-11D9-A1E4-000D9332809C</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
