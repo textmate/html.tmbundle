@@ -154,7 +154,7 @@ $tags = {
 left_tag  = ENV["TM_SCOPE_LEFT"][/meta\.tag\.\w+\.(\w+)\.\w+\.html/, 1].to_s
 right_tag = ENV["TM_SCOPE"][/meta\.tag\.\w+\.(\w+)\.\w+\.html/, 1].to_s
 
-url = $tags[left_tag.downcase] || $tags[left_tagright_tag.downcase] || 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element'
+url = $tags[left_tag.downcase] || $tags[right_tag.downcase] || 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element'
 
 puts "&lt;meta http-equiv='Refresh' content='0;URL=#{url}'&gt;"
 </string>
