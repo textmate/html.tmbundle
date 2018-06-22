@@ -2818,7 +2818,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.metadata.script.html</string>
+									<string>meta.tag.metadata.script.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2838,7 +2838,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.metadata.script.html</string>
+									<string>meta.tag.metadata.script.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2868,38 +2868,6 @@
 									<key>patterns</key>
 									<array>
 										<dict>
-											<key>captures</key>
-											<dict>
-												<key>0</key>
-												<dict>
-													<key>name</key>
-													<string>meta.tag.metadata.script.html</string>
-												</dict>
-												<key>1</key>
-												<dict>
-													<key>name</key>
-													<string>punctuation.definition.tag.end.html</string>
-												</dict>
-												<key>2</key>
-												<dict>
-													<key>name</key>
-													<string>punctuation.definition.tag.begin.html</string>
-												</dict>
-												<key>3</key>
-												<dict>
-													<key>name</key>
-													<string>source.js</string>
-												</dict>
-												<key>4</key>
-												<dict>
-													<key>name</key>
-													<string>meta.scope.between-tag-pair.html</string>
-												</dict>
-											</dict>
-											<key>match</key>
-											<string>(&gt;)(((&lt;)))(?=/(?i:script))</string>
-										</dict>
-										<dict>
 											<key>begin</key>
 											<string>(&gt;)</string>
 											<key>beginCaptures</key>
@@ -2907,7 +2875,7 @@
 												<key>0</key>
 												<dict>
 													<key>name</key>
-													<string>meta.tag.metadata.script.html</string>
+													<string>meta.tag.metadata.script.start.html</string>
 												</dict>
 												<key>1</key>
 												<dict>
@@ -2922,7 +2890,7 @@
 												<key>0</key>
 												<dict>
 													<key>name</key>
-													<string>meta.tag.metadata.script.html</string>
+													<string>meta.tag.metadata.script.end.html</string>
 												</dict>
 												<key>1</key>
 												<dict>
@@ -3039,7 +3007,7 @@
 												)
 											)</string>
 											<key>name</key>
-											<string>meta.tag.metadata.script.html</string>
+											<string>meta.tag.metadata.script.start.html</string>
 											<key>patterns</key>
 											<array>
 												<dict>
@@ -3064,13 +3032,13 @@
 												)
 											)</string>
 											<key>end</key>
-											<string>(?&lt;=&gt;)(((&lt;)))(?=/(?i:script))|((&lt;))(?=/(?i:script))</string>
+											<string>((&lt;))(?=/(?i:script))</string>
 											<key>endCaptures</key>
 											<dict>
 												<key>0</key>
 												<dict>
 													<key>name</key>
-													<string>meta.tag.metadata.script.html</string>
+													<string>meta.tag.metadata.script.end.html</string>
 												</dict>
 												<key>1</key>
 												<dict>
@@ -3078,21 +3046,6 @@
 													<string>punctuation.definition.tag.begin.html</string>
 												</dict>
 												<key>2</key>
-												<dict>
-													<key>name</key>
-													<string>text.html.basic</string>
-												</dict>
-												<key>3</key>
-												<dict>
-													<key>name</key>
-													<string>meta.scope.between-tag-pair.html</string>
-												</dict>
-												<key>4</key>
-												<dict>
-													<key>name</key>
-													<string>punctuation.definition.tag.begin.html</string>
-												</dict>
-												<key>5</key>
 												<dict>
 													<key>name</key>
 													<string>text.html.basic</string>
@@ -3114,7 +3067,7 @@
 														</dict>
 													</dict>
 													<key>name</key>
-													<string>meta.tag.metadata.script.html</string>
+													<string>meta.tag.metadata.script.start.html</string>
 													<key>patterns</key>
 													<array>
 														<dict>
@@ -3144,25 +3097,15 @@
 											<key>begin</key>
 											<string>(?=(?i:type))</string>
 											<key>end</key>
-											<string>(?&lt;=&gt;)((&lt;))(?=/(?i:script))|(&lt;)(?=/(?i:script))</string>
+											<string>(&lt;)(?=/(?i:script))</string>
 											<key>endCaptures</key>
 											<dict>
 												<key>0</key>
 												<dict>
 													<key>name</key>
-													<string>meta.tag.metadata.script.html</string>
+													<string>meta.tag.metadata.script.end.html</string>
 												</dict>
 												<key>1</key>
-												<dict>
-													<key>name</key>
-													<string>punctuation.definition.tag.begin.html</string>
-												</dict>
-												<key>2</key>
-												<dict>
-													<key>name</key>
-													<string>meta.scope.between-tag-pair.html</string>
-												</dict>
-												<key>3</key>
 												<dict>
 													<key>name</key>
 													<string>punctuation.definition.tag.begin.html</string>
@@ -3184,7 +3127,7 @@
 														</dict>
 													</dict>
 													<key>name</key>
-													<string>meta.tag.metadata.script.html</string>
+													<string>meta.tag.metadata.script.start.html</string>
 													<key>patterns</key>
 													<array>
 														<dict>
