@@ -2757,7 +2757,7 @@
 										</dict>
 									</dict>
 									<key>end</key>
-									<string>(?=/&gt;)|(&gt;)</string>
+									<string>(&gt;)</string>
 									<key>name</key>
 									<string>meta.tag.metadata.style.start.html</string>
 									<key>patterns</key>
