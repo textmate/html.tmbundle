@@ -2622,7 +2622,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)(((?i:[\w:]+))\b(?!-))</string>
+					<string>(&lt;/?)((\w[^\s&gt;]+))(?&lt;!/)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
