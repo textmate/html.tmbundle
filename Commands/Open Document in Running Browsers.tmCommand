@@ -5,12 +5,12 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby18  -wKU
+	<string>#!/usr/bin/env ruby20
 # 
 # Open Document in Running Browser(s)
 # 
 # Now supports multiple running versions of a single browser along
-# with a range of new/old browsers. Bring back support for Firefox.
+# with a range of new/old browsers.
 # 
 # Options: Set TM_PROJECT_SITEURL in your TM Project Window Info Button
 # in the following form: "http://example.com/"
@@ -25,25 +25,17 @@ end
 
 proclist = `ps -x -o command`
 active = []
-os = `defaults read /System/Library/CoreServices/SystemVersion ProductVersion`
 
-browsers = %w[ Safari OmniWeb Camino Shiira firefox(-bin)? Xyle\ scope Opera Internet\ Explorer flock-bin iCab Sunrise seamonkey-bin navigator-bin Google\ Chrome].join('|')
+browsers = %w[ Safari OmniWeb Camino Shiira firefox(-bin)? Xyle\ scope Opera Internet\ Explorer flock-bin Sunrise seamonkey-bin navigator-bin Google\ Chrome Safari\ Technology\ Preview].join('|')
 
 # Build paths to each active browser
 #
 # Notes:
-#   - 'WebKit' look ahead is to rule it out so we can use the working
-#      rule below.
-#   - 'LaunchCFMApp' portion is so iCab works.
-active = proclist.scan(%r{^(?:/.*LaunchCFMApp )?(/.*\.app)(?=/Contents/MacOS/(?:#{browsers})\b(?!.*WebKit))})
-
-# Special check for WebKit as it appears as Safari
-# Note: Only supports one running instance of WebKit, picked at random.
-if proclist =~ %r{/Contents/MacOS/Safari.*WebKit}
-  active &lt;&lt; "WebKit"
-end
-
-active.each {|p| `open -g -a #{e_sh(p)} #{e_sh(url)}` }
+#   - 'Technology Preview' look ahead is to not false match Safari against Safari Technology Preview.
+#   - 'Helper' look ahead is to exclude Chrome components.
+proclist.scan(%r{^(/.*\.app)(?=/Contents/MacOS/(?:#{browsers})\b(?! Technology Preview| Helper))}) { |b,n|
+  `open -g -a #{e_sh(b)} #{e_sh(url)}`
+}
 </string>
 	<key>input</key>
 	<string>none</string>
