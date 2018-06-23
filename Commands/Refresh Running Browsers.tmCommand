@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env osascript
+
+if application "Safari" is running then
+	tell application "Safari"
+		set sameURL to URL of current tab of front window
+		set URL of current tab of front window to sameURL
+	end tell
+end if
+
+try
+	tell application "Finder"
+		name of application file id "com.google.Chrome"
+	end tell
+	if application "Google Chrome" is running then
+		run script "
+			tell application \"Google Chrome\"
+				reload active tab of window 1
+			end tell
+		"
+	end if
+on error
+	-- do nothing
+end try
+
+try
+	tell application "Finder"
+		name of application file id "org.mozilla.firefox"
+	end tell
+	if application "Firefox" is running then
+		run script "
+			tell application \"Firefox\" to activate
+			tell application \"System Events\"
+				tell process \"Firefox\"
+					keystroke \"r\" using {command down}
+				end tell
+			end tell
+		"
+	end if
+on error
+	-- do nothing
+end try
+
+try
+	tell application "Finder"
+		name of application file id "com.apple.SafariTechnologyPreview"
+	end tell
+	if application id "com.apple.SafariTechnologyPreview" is running then
+		run script "
+			tell application id \"com.apple.SafariTechnologyPreview\"
+				set sameURL to URL of current tab of front window
+				set URL of current tab of front window to sameURL
+			end tell
+		"
+	end if
+on error
+	-- do nothing
+end try
+
+try
+	tell application "Finder"
+		name of application file id "com.operasoftware.Opera"
+	end tell
+	if application id "com.operasoftware.Opera" is running then
+		run script "
+			tell application \"Opera\"
+				reload active tab of front window
+			end tell
+		"
+	end if
+on error
+	-- do nothing
+end try
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Refresh Running Browser(s)</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>text.html, source.css</string>
+	<key>uuid</key>
+	<string>B8651C6E-A05E-11D9-86AC-000D93C8BE28</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
