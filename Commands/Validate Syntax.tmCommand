@@ -5,37 +5,44 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby18  -wKU
+	<string>#!/usr/bin/env ruby20
+
 STDOUT.sync = true
 
 page = STDIN.read
 page.gsub!(/&lt;\?(php|=).*?\?&gt;|&lt;%.*?%&gt;/m, '')
 
-open('|curl -sF uploaded_file=@-\;type=text/html http://validator.w3.org/check', 'r+') do |io|
+open('|curl -sF uploaded_file=@-\;type=text/html https://validator.w3.org/nu/', 'r+') do |io|
   io &lt;&lt; page; io.close_write
 
   result = io.read
 
-  result.gsub!(/&lt;\/title&gt;/, '\&amp;&lt;base href="http://validator.w3.org/"&gt;')
-  result.gsub!(/Line (\d+),?\s*Column (\d+)/mi) do
+  result.gsub!(/&lt;head&gt;/, '\&amp;&lt;base href="https://validator.w3.org/nu/"&gt;')
+  result.gsub!(/line &lt;span[^&gt;]*&gt;(\d+)&lt;\/span[^&gt;]*&gt;,?\s*column &lt;span[^&gt;]*&gt;(\d+)&lt;\/span[^&gt;]*&gt;/mi) do
     "&lt;a href=\"txmt://open?line=#$1&amp;amp;column=#{$2.to_i + 1}\"&gt;#$&amp;&lt;/a&gt;"
   end
   puts result
 end
 </string>
-	<key>dontFollowNewOutput</key>
-	<true/>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^V</string>
 	<key>name</key>
-	<string>Validate Syntax (W3C)</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<string>Validate Syntax</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>uuid</key>
 	<string>3F26240E-6E4A-11D9-B411-000D93589AF6</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
