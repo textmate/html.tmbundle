@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;!DOCTYPE html&gt;
+&lt;html lang="${LANG/(?&lt;=^..).*//}"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"${TM_XHTML}&gt;
+  &lt;meta http-equiv="x-ua-compatible" content="ie=edge"${TM_XHTML}&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"${TM_XHTML}&gt;
+
+  &lt;title&gt;$1&lt;/title&gt;
+
+  $2
+&lt;/head&gt;
+&lt;body&gt;
+  $0
+&lt;/body&gt;
+&lt;/html&gt;
+</string>
+	<key>name</key>
+	<string>Insert Boilerplate</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>html</string>
+	<key>uuid</key>
+	<string>64F212E5-545D-4D36-A243-B452B10EC678</string>
+</dict>
+</plist>
