@@ -8,7 +8,7 @@
 	<string>#!/bin/bash
 [[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
 
-echo "&lt;script src=\"$TM_DROPPED_FILE\" type=\"text/javascript\"&gt;&lt;/script&gt;"</string>
+echo "&lt;script src=\"$TM_DROPPED_FILE\"&gt;&lt;/script&gt;"</string>
 	<key>draggedFileExtensions</key>
 	<array>
 		<string>js</string>

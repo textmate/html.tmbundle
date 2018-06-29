@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;script src="$1" type="text/javascript"&gt;&lt;/script&gt;</string>
+	<string>&lt;script src="$1"&gt;&lt;/script&gt;</string>
 	<key>name</key>
 	<string>Script With External Source</string>
 	<key>scope</key>
