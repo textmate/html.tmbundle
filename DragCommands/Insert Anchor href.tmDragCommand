@@ -3,8 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>command</key>
-	<string>title=`echo $TM_DROPPED_FILE | perl -pe 's/^(.*\/)?(.*?)(\..*)?$/$2/g'`
-echo -n " href=\"$TM_DROPPED_FILE\" title=\"\${1:$title}\""</string>
+	<string>#!/usr/bin/env ruby20
+
+if ENV['TM_SCOPE'] =~ /string.quoted.double.html/
+  print "#{ENV['TM_DROPPED_FILE']}"
+elsif ENV['TM_SCOPE'] =~ /punctuation.definition.tag.end.html/
+  print " href=\"#{ENV['TM_DROPPED_FILE']}\""
+else
+  print "href=\"#{ENV['TM_DROPPED_FILE']}\" "
+end
+</string>
 	<key>draggedFileExtensions</key>
 	<array>
 		<string>html</string>
@@ -22,11 +30,11 @@ echo -n " href=\"$TM_DROPPED_FILE\" title=\"\${1:$title}\""</string>
 		<string>dbml</string>
 	</array>
 	<key>name</key>
-	<string>Insert Anchor href</string>
+	<string>Insert Href Attribute</string>
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
-	<string>text.html meta.tag -string.quoted -entity</string>
+	<string>B:text.html meta.tag</string>
 	<key>uuid</key>
 	<string>BD4AEF38-638B-4C47-A762-4A0A6190F9C7</string>
 </dict>
