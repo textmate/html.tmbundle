@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;source src="${1:example.mp4}" type="video/${1/(?i).*?(?:\.((mp4)|(webm)|(og[gv])|(mov)))?$/(?2:mp4)(?3:webm)(?4:ogg)(?5:quicktime)(?1::unknown)/}"${TM_XHTML}&gt;</string>
+	<key>name</key>
+	<string>Source</string>
+	<key>scope</key>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
+	<key>tabTrigger</key>
+	<string>source</string>
+	<key>uuid</key>
+	<string>2A98CB53-7B41-48BF-ADFD-EB701EE61F84</string>
+</dict>
+</plist>
