@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;style type="text/css" media="screen"&gt;
+	<string>&lt;style&gt;
 	$0
 &lt;/style&gt;</string>
 	<key>name</key>

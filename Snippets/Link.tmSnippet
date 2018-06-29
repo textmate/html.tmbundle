@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3|screen,all,braille,embossed,handheld,print,projection,speech,tty,tv|}"${TM_XHTML}&gt;</string>
+	<string>&lt;link rel="${1:stylesheet}" href="${2:/css/master.css}"${TM_XHTML}&gt;</string>
 	<key>name</key>
 	<string>Link</string>
 	<key>scope</key>
