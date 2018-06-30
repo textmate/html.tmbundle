@@ -1116,6 +1116,119 @@
 				</dict>
 			</array>
 		</dict>
+		<key>tag-class-attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(class)\b\s*(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.class.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?!\G)(?&lt;='|"|[^\s&lt;&gt;/])</string>
+			<key>name</key>
+			<string>meta.attribute-with-value.class.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.class.html</string>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#embedded-code</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.class.html</string>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#embedded-code</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.toc-list.class.html</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?&lt;==)(?:[^\s&lt;&gt;/'"]|/(?!&gt;))+</string>
+					<key>name</key>
+					<string>string.unquoted.html</string>
+				</dict>
+			</array>
+		</dict>
 		<key>tag-stuff</key>
 		<dict>
 			<key>patterns</key>
@@ -1123,6 +1236,10 @@
 				<dict>
 					<key>include</key>
 					<string>#tag-id-attribute</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-class-attribute</string>
 				</dict>
 				<dict>
 					<key>include</key>
