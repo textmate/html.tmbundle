@@ -3,10 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;table border="${1:0}"${2: cellspacing="${3:5}" cellpadding="${4:5}"}&gt;
-	&lt;tr&gt;&lt;th&gt;${5:Header}&lt;/th&gt;&lt;/tr&gt;
-	&lt;tr&gt;&lt;td&gt;${0:Data}&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</string>
+	<string>&lt;table&gt;
+${1:	&lt;caption&gt;${2:Description}&lt;/caption&gt;
+}${3:	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th scope="${4|col,row,rowgroup,colgroup,auto|}"&gt;${5:Header Title}&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+}${3/(?m)\A(..*)\z/(?1:	&lt;tbody&gt;
+	:)/}	&lt;tr&gt;
+${3/(?m)\A(..*)\z/(?1:	:)/}		&lt;td&gt;$6&lt;/td&gt;$0
+${3/(?m)\A(..*)\z/(?1:	:)/}	&lt;/tr&gt;
+${3/(?m)\A(..*)\z/(?1:	&lt;/tbody&gt;
+:)/}&lt;/table&gt;</string>
 	<key>name</key>
 	<string>Table</string>
 	<key>scope</key>
