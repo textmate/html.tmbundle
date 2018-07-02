@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Completions HTML Attributes</string>
 	<key>scope</key>
-	<string>L:text.html.basic meta.tag &gt; entity.other.attribute-name</string>
+	<string>L:text.html.basic meta.tag &gt; meta.attribute &gt; entity.other.attribute-name</string>
 	<key>settings</key>
 	<dict>
 		<key>completions</key>
