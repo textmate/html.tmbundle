@@ -5,11 +5,11 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby20
 
-if ENV['TM_DROPPED_FILE'] =~ /print[^\/]*.css$/
+if ENV['TM_DROPPED_FILE'] =~ /print[^\/]*\.css$/
   print "&lt;link rel=\"stylesheet\" href=\"#{ENV['TM_DROPPED_FILE']}\" media=\"print\"$TM_XHTML&gt;"
-elsif ENV['TM_DROPPED_FILE'] =~ /(aural|speech)[^\/]*.css$/
+elsif ENV['TM_DROPPED_FILE'] =~ /(aural|speech)[^\/]*\.css$/
   print "&lt;link rel=\"stylesheet\" href=\"#{ENV['TM_DROPPED_FILE']}\" media=\"speech\"$TM_XHTML&gt;"
-elsif ENV['TM_DROPPED_FILE'] =~ /screen[^\/]*.css$/
+elsif ENV['TM_DROPPED_FILE'] =~ /screen[^\/]*\.css$/
   print "&lt;link rel=\"stylesheet\" href=\"#{ENV['TM_DROPPED_FILE']}\" media=\"screen\"$TM_XHTML&gt;"
 else
   print "&lt;link rel=\"stylesheet\" href=\"#{ENV['TM_DROPPED_FILE']}\"$TM_XHTML&gt;"

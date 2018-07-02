@@ -5,9 +5,9 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby20
 
-if ENV['TM_SCOPE'] =~ /string.quoted.double.html/
+if ENV['TM_SCOPE'] =~ /string\.quoted\.double\.html/
   print "#{ENV['TM_DROPPED_FILE']}"
-elsif ENV['TM_SCOPE'] =~ /punctuation.definition.tag.end.html/
+elsif ENV['TM_SCOPE'] =~ /punctuation\.definition\.tag\.end\.html/
   print " href=\"#{ENV['TM_DROPPED_FILE']}\""
 else
   print "href=\"#{ENV['TM_DROPPED_FILE']}\" "
