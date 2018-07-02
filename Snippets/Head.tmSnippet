@@ -5,8 +5,8 @@
 	<key>content</key>
 	<string>&lt;head&gt;
 	&lt;meta charset="utf-8"${TM_XHTML}&gt;
-  &lt;meta http-equiv="x-ua-compatible" content="ie=edge"${TM_XHTML}&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"${TM_XHTML}&gt;
+	&lt;meta http-equiv="x-ua-compatible" content="ie=edge"${TM_XHTML}&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"${TM_XHTML}&gt;
 
 	&lt;title&gt;${1:${TM_FILENAME/((.+)\..*)?/(?2:$2:Page Title)/}}&lt;/title&gt;
 	$0
