@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;audio controls&gt;
+	&lt;source src="${1:example.mp3}" type="audio/${1/(?i).*?(?:\.((mp4)|(mp3)|(webm)|(og[ga])|(flac)|(wave?)))?$/(?2:mp4)(?3:mp3)(?4:webm)(?5:ogg)(?6:flac)(?7:wav)(?1::unknown)/}"${TM_XHTML}&gt;
+
+	&lt;p&gt;Your browser doesn't support HTML5 audio. Here is
+		a &lt;a href="${1:example.mp3}"&gt;link to the audio&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/audio&gt;</string>
+	<key>name</key>
+	<string>Audio</string>
+	<key>scope</key>
+	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
+	<key>tabTrigger</key>
+	<string>audio</string>
+	<key>uuid</key>
+	<string>8C826982-F460-43FA-BA31-476EE410F101</string>
+</dict>
+</plist>

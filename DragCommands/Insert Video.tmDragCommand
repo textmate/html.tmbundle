@@ -9,7 +9,7 @@
 
 if ENV['TM_DROPPED_FILE'] =~ /(?i)\.mp4$/
   mimetype = 'mp4'
-elsif ENV['TM_DROPPED_FILE'] =~ /(?i)\.ogv$/
+elsif ENV['TM_DROPPED_FILE'] =~ /(?i)\.og[gv]$/
   mimetype = 'ogg'
 elsif ENV['TM_DROPPED_FILE'] =~ /(?i)\.webm$/
   mimetype = 'webm'
@@ -28,10 +28,11 @@ TAG
 </string>
 	<key>draggedFileExtensions</key>
 	<array>
-		<string>mov</string>
-		<string>ogv</string>
 		<string>mp4</string>
+		<string>ogg</string>
+		<string>ogv</string>
 		<string>webm</string>
+		<string>mov</string>
 	</array>
 	<key>input</key>
 	<string>selection</string>
