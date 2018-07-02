@@ -214,6 +214,8 @@
 			<string>onwaiting</string>
 			<string>onwheel</string>
 		</array>
+		<key>disableDefaultCompletion</key>
+		<true/>
 	</dict>
 	<key>uuid</key>
 	<string>69BD9C8F-15C0-4F67-8B7E-64E48B5E9E71</string>

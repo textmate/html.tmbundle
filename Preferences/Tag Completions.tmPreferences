@@ -124,6 +124,8 @@
 			<string>video</string>
 			<string>wbr</string>
 		</array>
+		<key>disableDefaultCompletion</key>
+		<true/>
 	</dict>
 	<key>uuid</key>
 	<string>4720ADB8-DD17-4F97-A715-AFD72E22CE45</string>
