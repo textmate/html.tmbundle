@@ -1577,6 +1577,10 @@
 								</dict>
 							</array>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#tags-invalid</string>
+						</dict>
 					</array>
 				</dict>
 			</dict>
@@ -2611,6 +2615,10 @@
 									<string>#tags</string>
 								</dict>
 							</array>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#tags-invalid</string>
 						</dict>
 					</array>
 				</dict>
