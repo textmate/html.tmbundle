@@ -16,7 +16,7 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>injections</key>
 	<dict>
-		<key>R:text.html - (comment.block, text.html meta.embedded, meta.tag.*.*.html, meta.tag.*.*.*.html)</key>
+		<key>R:text.html - (comment.block, text.html meta.embedded, meta.tag.*.*.html, meta.tag.*.*.*.html, meta.tag.*.*.*.*.html)</key>
 		<dict>
 			<key>comment</key>
 			<string>Uses R: to ensure this matches after any other injections.</string>
@@ -1016,7 +1016,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.structure.math-$2.void.html</string>
+									<string>meta.tag.structure.math.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1047,7 +1047,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)(annotation|annotation-xml|semantics|menclose|merror|mfenced|mfrac|mpadded|mphantom|mroot|mrow|msqrt|mstyle|mmultiscripts|mover|mprescripts|msub|msubsup|msup|munder|munderover|none|mlabeledtr|mtable|mtd|mtr|mlongdiv|mscarries|mscarry|msgroup|msline|msrow|mstack|maction)(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.structure.math-$2.html</string>
+							<string>meta.element.structure.math.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -1057,7 +1057,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.structure.math-$2.start.html</string>
+									<string>meta.tag.structure.math.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1092,7 +1092,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.structure.math-$2.end.html</string>
+									<string>meta.tag.structure.math.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1116,7 +1116,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.structure.math-$2.html</string>
+							<string>meta.element.structure.math.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1154,7 +1154,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.inline.math-$2.void.html</string>
+									<string>meta.tag.inline.math.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1185,7 +1185,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)(mi|mn|mo|ms|mspace|mtext|maligngroup|malignmark)(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.inline.math-$2.html</string>
+							<string>meta.element.inline.math.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -1195,7 +1195,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.inline.math-$2.start.html</string>
+									<string>meta.tag.inline.math.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1230,7 +1230,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.inline.math-$2.end.html</string>
+									<string>meta.tag.inline.math.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1254,7 +1254,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.inline.math-$2.html</string>
+							<string>meta.element.inline.math.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1292,7 +1292,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.object.math-$2.void.html</string>
+									<string>meta.tag.object.math.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1323,7 +1323,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)(mglyph)(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.object.math-$2.html</string>
+							<string>meta.element.object.math.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -1333,7 +1333,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.object.math-$2.start.html</string>
+									<string>meta.tag.object.math.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1368,7 +1368,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.object.math-$2.end.html</string>
+									<string>meta.tag.object.math.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1392,7 +1392,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.object.math-$2.html</string>
+							<string>meta.element.object.math.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1760,7 +1760,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.metadata.svg-$2.void.html</string>
+									<string>meta.tag.metadata.svg.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1791,7 +1791,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)(color-profile|desc|metadata|script|style|title)(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.metadata.svg-$2.html</string>
+							<string>meta.element.metadata.svg.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -1801,7 +1801,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.metadata.svg-$2.start.html</string>
+									<string>meta.tag.metadata.svg.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1836,7 +1836,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.metadata.svg-$2.end.html</string>
+									<string>meta.tag.metadata.svg.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1860,7 +1860,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.metadata.svg-$2.html</string>
+							<string>meta.element.metadata.svg.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1898,7 +1898,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.structure.svg-$2.void.html</string>
+									<string>meta.tag.structure.svg.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1929,7 +1929,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)(animateMotion|clipPath|defs|feComponentTransfer|feDiffuseLighting|feMerge|feSpecularLighting|filter|g|hatch|linearGradient|marker|mask|mesh|meshgradient|meshpatch|meshrow|pattern|radialGradient|switch|text|textPath)(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.structure.svg-$2.html</string>
+							<string>meta.element.structure.svg.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -1939,7 +1939,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.structure.svg-$2.start.html</string>
+									<string>meta.tag.structure.svg.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1974,7 +1974,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.structure.svg-$2.end.html</string>
+									<string>meta.tag.structure.svg.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1998,7 +1998,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.structure.svg-$2.html</string>
+							<string>meta.element.structure.svg.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -2036,7 +2036,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.inline.svg-$2.void.html</string>
+									<string>meta.tag.inline.svg.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2067,7 +2067,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)(a|animate|discard|feBlend|feColorMatrix|feComposite|feConvolveMatrix|feDisplacementMap|feDistantLight|feDropShadow|feFlood|feFuncA|feFuncB|feFuncG|feFuncR|feGaussianBlur|feMergeNode|feMorphology|feOffset|fePointLight|feSpotLight|feTile|feTurbulence|hatchPath|mpath|set|solidcolor|stop|tspan)(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.inline.svg-$2.html</string>
+							<string>meta.element.inline.svg.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -2077,7 +2077,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.inline.svg-$2.start.html</string>
+									<string>meta.tag.inline.svg.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2112,7 +2112,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.inline.svg-$2.end.html</string>
+									<string>meta.tag.inline.svg.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2136,7 +2136,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.inline.svg-$2.html</string>
+							<string>meta.element.inline.svg.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -2174,7 +2174,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.object.svg-$2.void.html</string>
+									<string>meta.tag.object.svg.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2205,7 +2205,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)(circle|ellipse|feImage|foreignObject|image|line|path|polygon|polyline|rect|symbol|use|view)(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.object.svg-$2.html</string>
+							<string>meta.element.object.svg.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -2215,7 +2215,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.object.svg-$2.start.html</string>
+									<string>meta.tag.object.svg.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2250,7 +2250,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.object.svg-$2.end.html</string>
+									<string>meta.tag.object.svg.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2274,7 +2274,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.object.svg-$2.html</string>
+							<string>meta.element.object.svg.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -2312,7 +2312,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.other.svg-$2.void.html</string>
+									<string>meta.tag.other.svg.$2.void.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2348,7 +2348,7 @@
 							<key>match</key>
 							<string>(?i)(&lt;)((altGlyph|altGlyphDef|altGlyphItem|animateColor|animateTransform|cursor|font|font-face|font-face-format|font-face-name|font-face-src|font-face-uri|glyph|glyphRef|hkern|missing-glyph|tref|vkern))(?=\s|/?&gt;)(?:(([^"'&gt;]|"[^"]*"|'[^']*')*)(/&gt;))</string>
 							<key>name</key>
-							<string>meta.element.other.svg-$2.html</string>
+							<string>meta.element.other.svg.$2.html</string>
 						</dict>
 						<dict>
 							<key>begin</key>
@@ -2358,7 +2358,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.other.svg-$2.start.html</string>
+									<string>meta.tag.other.svg.$2.start.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2398,7 +2398,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>meta.tag.other.svg-$2.end.html</string>
+									<string>meta.tag.other.svg.$2.end.html</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -2427,7 +2427,7 @@
 								</dict>
 							</dict>
 							<key>name</key>
-							<string>meta.element.other.svg-$2.html</string>
+							<string>meta.element.other.svg.$2.html</string>
 							<key>patterns</key>
 							<array>
 								<dict>
