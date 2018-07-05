@@ -56,7 +56,7 @@
 			<key>end</key>
 			<string>(\?&gt;)</string>
 			<key>name</key>
-			<string>meta.tag.metadata.xml.html</string>
+			<string>meta.tag.metadata.processing.xml.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
