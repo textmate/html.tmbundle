@@ -22,7 +22,7 @@
 	<key>name</key>
 	<string>Insert Boilerplate</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html, L:dyn.caret.begin.document</string>
 	<key>tabTrigger</key>
 	<string>html</string>
 	<key>uuid</key>
