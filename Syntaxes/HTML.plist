@@ -4030,7 +4030,7 @@
 					<string>/?&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
@@ -4066,7 +4066,7 @@
 					<string>&gt;</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.tag.end.html</string>
