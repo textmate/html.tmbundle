@@ -38,83 +38,16 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>begin</key>
-			<string>(&lt;\?)(xml)</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.html</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(\?&gt;)</string>
-			<key>name</key>
-			<string>meta.tag.metadata.processing.xml.html</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#attribute</string>
-				</dict>
-			</array>
+			<key>include</key>
+			<string>#xml-processing</string>
 		</dict>
 		<dict>
 			<key>include</key>
 			<string>#comment</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>&lt;!(?=(?i:DOCTYPE\s))</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>&gt;</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.metadata.doctype.html</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\G(?i:DOCTYPE)</string>
-					<key>name</key>
-					<string>entity.name.tag.html</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>"</string>
-					<key>end</key>
-					<string>"</string>
-					<key>name</key>
-					<string>string.quoted.double.html</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>[^\s&gt;]+</string>
-					<key>name</key>
-					<string>entity.other.attribute-name.html</string>
-				</dict>
-			</array>
+			<key>include</key>
+			<string>#doctype</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -732,6 +665,54 @@
 					<string>--!&gt;</string>
 					<key>name</key>
 					<string>invalid.illegal.characters-not-allowed-here.html</string>
+				</dict>
+			</array>
+		</dict>
+		<key>doctype</key>
+		<dict>
+			<key>begin</key>
+			<string>&lt;!(?=(?i:DOCTYPE\s))</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.metadata.doctype.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\G(?i:DOCTYPE)</string>
+					<key>name</key>
+					<string>entity.name.tag.html</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>end</key>
+					<string>"</string>
+					<key>name</key>
+					<string>string.quoted.double.html</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[^\s&gt;]+</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.html</string>
 				</dict>
 			</array>
 		</dict>
@@ -4081,6 +4062,35 @@
 							<string>#attribute</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>xml-processing</key>
+		<dict>
+			<key>begin</key>
+			<string>(&lt;\?)(xml)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\?&gt;)</string>
+			<key>name</key>
+			<string>meta.tag.metadata.processing.xml.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#attribute</string>
 				</dict>
 			</array>
 		</dict>
