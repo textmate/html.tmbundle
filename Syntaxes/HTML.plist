@@ -668,6 +668,38 @@
 				</dict>
 			</array>
 		</dict>
+		<key>core-minus-invalid</key>
+		<dict>
+			<key>comment</key>
+			<string>This should be the root pattern array includes minus #tags-invalid</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#xml-processing</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#doctype</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#cdata</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tags-valid</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#entities</string>
+				</dict>
+			</array>
+		</dict>
 		<key>doctype</key>
 		<dict>
 			<key>begin</key>

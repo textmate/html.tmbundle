@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array/>
+	<key>injections</key>
+	<dict>
+		<key>R:text.html - (comment.block, text.html meta.embedded, meta.tag.*.*.html, meta.tag.*.*.*.html, meta.tag.*.*.*.*.html)</key>
+		<dict>
+			<key>comment</key>
+			<string>Uses R: to ensure this matches after any other injections.</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>&lt;</string>
+					<key>name</key>
+					<string>invalid.illegal.bad-angle-bracket.html</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>keyEquivalent</key>
+	<string>^~H</string>
+	<key>name</key>
+	<string>HTML (Derivative)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>text.html.basic#core-minus-invalid</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(&lt;/?)(\w[^\s&gt;]*)(?&lt;!/)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>((?: ?/)?&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.other.unrecognized.html.derivative</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>text.html.basic#attribute</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.html.derivative</string>
+	<key>uuid</key>
+	<string>D6692427-BC16-40BC-8340-A8712B8D386D</string>
+</dict>
+</plist>
