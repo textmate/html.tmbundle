@@ -11,6 +11,7 @@ if application "Safari" is running then
 	tell application "Safari"
 		set sameURL to URL of current tab of front window
 		set URL of current tab of front window to sameURL
+		set application "Safari" to activate
 	end tell
 end if
 
@@ -63,6 +64,12 @@ on error
 	-- do nothing
 end try
 
+set doesExist to false
+try
+	do shell script "osascript -e 'exists application \"Opera\"'"
+	set doesExist to true
+end try
+if doesExist then
 try
 	tell application "Finder"
 		name of application file id "com.operasoftware.Opera"
@@ -77,6 +84,8 @@ try
 on error
 	-- do nothing
 end try
+endif
+
 </string>
 	<key>input</key>
 	<string>none</string>
