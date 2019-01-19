@@ -6,10 +6,8 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby20
-
-print STDIN.read.gsub(/([^a-zA-Z0-9_.-]+)/n) {
-  '%' + $1.unpack('H2' * $1.bytes.size).join('%').upcase
-}
+require 'erb'
+print ERB::Util.url_encode(STDIN.read)
 </string>
 	<key>fallbackInput</key>
 	<string>line</string>
