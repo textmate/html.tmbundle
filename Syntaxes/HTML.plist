@@ -356,7 +356,47 @@
 														</dict>
 													</dict>
 													<key>match</key>
-													<string>[^\n"]+</string>
+													<string>([^\n"/]|/(?![/*]))+</string>
+												</dict>
+												<dict>
+													<key>begin</key>
+													<string>//</string>
+													<key>beginCaptures</key>
+													<dict>
+														<key>0</key>
+														<dict>
+															<key>name</key>
+															<string>punctuation.definition.comment.js</string>
+														</dict>
+													</dict>
+													<key>end</key>
+													<string>(?=")|\n</string>
+													<key>name</key>
+													<string>comment.line.double-slash.js</string>
+												</dict>
+												<dict>
+													<key>begin</key>
+													<string>/\*</string>
+													<key>beginCaptures</key>
+													<dict>
+														<key>0</key>
+														<dict>
+															<key>name</key>
+															<string>punctuation.definition.comment.begin.js</string>
+														</dict>
+													</dict>
+													<key>end</key>
+													<string>(?=")|\*/</string>
+													<key>endCaptures</key>
+													<dict>
+														<key>0</key>
+														<dict>
+															<key>name</key>
+															<string>punctuation.definition.comment.end.js</string>
+														</dict>
+													</dict>
+													<key>name</key>
+													<string>comment.block.js</string>
 												</dict>
 											</array>
 										</dict>
@@ -407,7 +447,47 @@
 														</dict>
 													</dict>
 													<key>match</key>
-													<string>[^\n']+</string>
+													<string>([^\n'/]|/(?![/*]))+</string>
+												</dict>
+												<dict>
+													<key>begin</key>
+													<string>//</string>
+													<key>beginCaptures</key>
+													<dict>
+														<key>0</key>
+														<dict>
+															<key>name</key>
+															<string>punctuation.definition.comment.js</string>
+														</dict>
+													</dict>
+													<key>end</key>
+													<string>(?=')|\n</string>
+													<key>name</key>
+													<string>comment.line.double-slash.js</string>
+												</dict>
+												<dict>
+													<key>begin</key>
+													<string>/\*</string>
+													<key>beginCaptures</key>
+													<dict>
+														<key>0</key>
+														<dict>
+															<key>name</key>
+															<string>punctuation.definition.comment.begin.js</string>
+														</dict>
+													</dict>
+													<key>end</key>
+													<string>(?=')|\*/</string>
+													<key>endCaptures</key>
+													<dict>
+														<key>0</key>
+														<dict>
+															<key>name</key>
+															<string>punctuation.definition.comment.end.js</string>
+														</dict>
+													</dict>
+													<key>name</key>
+													<string>comment.block.js</string>
 												</dict>
 											</array>
 										</dict>
