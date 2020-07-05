@@ -3093,6 +3093,7 @@
 																  | livescript
 																  | (x-)?ecmascript
 																  | babel						# Javascript variant currently
+																  | paperscript						# paper.js's javascript variant
 																  								#   recognized as such
 															  	)
 															  | application/					# Application mime-types
