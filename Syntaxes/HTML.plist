@@ -356,7 +356,7 @@
 														</dict>
 													</dict>
 													<key>match</key>
-													<string>([^\n"/]|/(?![/*]))+</string>
+													<string>([^\n"/]|/)+</string>
 												</dict>
 												<dict>
 													<key>begin</key>
@@ -447,7 +447,7 @@
 														</dict>
 													</dict>
 													<key>match</key>
-													<string>([^\n'/]|/(?![/*]))+</string>
+													<string>([^\n'/]|/)+</string>
 												</dict>
 												<dict>
 													<key>begin</key>
