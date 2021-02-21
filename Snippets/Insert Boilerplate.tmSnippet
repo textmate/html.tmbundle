@@ -6,16 +6,16 @@
 	<string>&lt;!DOCTYPE html&gt;
 &lt;html lang="${LANG/(?&lt;=^..).*//}"&gt;
 &lt;head&gt;
-  &lt;meta charset="utf-8"${TM_XHTML}&gt;
-  &lt;meta http-equiv="x-ua-compatible" content="ie=edge"${TM_XHTML}&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"${TM_XHTML}&gt;
+	&lt;meta charset="utf-8"${TM_XHTML}&gt;
+	&lt;meta http-equiv="x-ua-compatible" content="ie=edge"${TM_XHTML}&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"${TM_XHTML}&gt;
 
-  &lt;title&gt;$1&lt;/title&gt;
+	&lt;title&gt;$1&lt;/title&gt;
 
-  $2
+	$2
 &lt;/head&gt;
 &lt;body&gt;
-  $0
+	$0
 &lt;/body&gt;
 &lt;/html&gt;
 </string>
