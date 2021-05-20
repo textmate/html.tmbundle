@@ -3126,6 +3126,7 @@
 													text/
 													(
 														x-handlebars
+													  | x-jquery-tmpl
 													  | (x-(handlebars-)?|ng-)?template
 													  | html
 													)
