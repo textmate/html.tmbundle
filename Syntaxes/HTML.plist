@@ -3094,6 +3094,8 @@
 																  | (x-)?ecmascript
 																  | babel						# Javascript variant currently
 																  								#   recognized as such
+																  | jsx						# Javascript variant currently
+																  								#   recognized as such
 															  	)
 															  | application/					# Application mime-types
 															  	(
