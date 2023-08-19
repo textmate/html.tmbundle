@@ -3091,6 +3091,7 @@
 																  | x-javascript
 																  | jscript
 																  | livescript
+																  | typescript
 																  | (x-)?ecmascript
 																  | babel						# Javascript variant currently
 																  								#   recognized as such
